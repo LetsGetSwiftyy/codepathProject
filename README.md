@@ -1,6 +1,6 @@
 # Group Project - **Name of App**
 
-**Members:** sMarilyn Florek, Christian Martinez, Garrett Tibbetts, and Francisco Hernandez
+**Members:** Marilyn Florek, Christian Martinez, Garrett Tibbetts, and Francisco Hernandez
 
 ## Description
 -Short description of your app
