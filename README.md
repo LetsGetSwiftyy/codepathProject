@@ -1,4 +1,4 @@
-# Group Project - **Name of App**
+# Group Project - **Name**
 
 **Members:** Marilyn Florek, Christian Martinez, Garrett Tibbetts, and Francisco Hernandez
 
@@ -6,14 +6,14 @@
 
 An Apple Watch app using Apple's HealthKit API and iTunes API to create start playlists based on your heartbeat
 
-- Hyped, chill, etc.
+- Playlists: Hyped, chill, etc.
 
 
 ## User Stories
 
 **Required** -Required (core) user stories for your app in a bulleted list
 
-[ ]
+[ ]  Heartbeat detected and matched with music tempo
 [ ]
 
 **Optional** -Optional (nice to have) user stories listed separately
