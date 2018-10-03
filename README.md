@@ -4,7 +4,9 @@
 
 ## Description
 
--Short description of your app
+An Apple Watch app using Apple's HealthKit API and iTunes API to create start playlists based on your heartbeat
+
+- Hyped, chill, etc.
 
 
 ## User Stories
