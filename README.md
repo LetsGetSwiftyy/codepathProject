@@ -12,12 +12,15 @@
 **Required** -Required (core) user stories for your app in a bulleted list
 
 [ ] The App should be able to communicate with the Apple Watch.
+
 [ ] Apple Watch data will be privatized and utilized solely for the user.
+
 [ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
 **Optional** -Optional (nice to have) user stories listed separately
 
 [ ] The app can be fine tuned to give more balanced options.
+
 [ ] The automated playlist can be shared to other users.
 
 ## Video Walkthrough
