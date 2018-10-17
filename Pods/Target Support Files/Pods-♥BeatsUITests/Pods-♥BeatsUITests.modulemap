@@ -1,0 +1,6 @@
+framework module Pods__BeatsUITests {
+  umbrella header "Pods-♥BeatsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
