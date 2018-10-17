@@ -1,25 +1,27 @@
-# Group Project - **Name**
+# Group Project - **Name of App**
 
 **Members:** Marilyn Florek, Christian Martinez, Garrett Tibbetts, and Francisco Hernandez
 
 ## Description
 
-An Apple Watch app using Apple's HealthKit API and iTunes API to create start playlists based on your heartbeat
-
-- Playlists: Hyped, chill, etc.
+- The app will measure heartbeat variability, and generate an automated playlist according to data received from an apple watch. The playlist can then be shared with others, or saved to the user.
 
 
 ## User Stories
 
 **Required** -Required (core) user stories for your app in a bulleted list
 
-[ ]  Heartbeat detected and matched with music tempo
-[ ]
+[ ] The App should be able to communicate with the Apple Watch.
+
+[ ] Apple Watch data will be privatized and utilized solely for the user.
+
+[ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
 **Optional** -Optional (nice to have) user stories listed separately
 
-[ ]
-[ ]
+[ ] The app can be fine tuned to give more balanced options.
+
+[ ] The automated playlist can be shared to other users.
 
 ## Video Walkthrough
 
@@ -55,3 +57,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
