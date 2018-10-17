@@ -1,10 +1,12 @@
-# Group Project - **Name of App**
+# Group Project - **HeartBeats**
 
 **Members:** Marilyn Florek, Christian Martinez, Garrett Tibbetts, and Francisco Hernandez
 
 ## Description
 
-- The app will measure heartbeat variability, and generate an automated playlist according to data received from an apple watch. The playlist can then be shared with others, or saved to the user.
+Finding music that fits your exercise can be tough. HeartBeats is an app that would solve this problem for you. Based on your activity level, this app will measure your heartbeat variability, and generate an automated playlist according to data received from your apple watch.
+
+The playlist can then be shared with others, or saved to the user.
 
 
 ## User Stories
@@ -17,11 +19,23 @@
 
 [ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
+[ ] The user will be able to connect to Spotify
+
+[ ] The App will be able to track the users BPM
+
+[ ] User is able to see a moving heart icon with a play button. Below will show your current BPMable
+
+
 **Optional** -Optional (nice to have) user stories listed separately
 
 [ ] The app can be fine tuned to give more balanced options.
 
 [ ] The automated playlist can be shared to other users.
+
+
+## Wireframe
+
+<img src='https://github.com/LetsGetSwiftyy/heartBeats/blob/master/%E2%99%A5Beat.png?raw=true' title='HeartBeats Wireframe' width='' alt='HearBeats Wireframe' />
 
 ## Video Walkthrough
 
@@ -35,12 +49,19 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
+- [Firestore] - Google's firebase database
+- [Spotify] - music API
+- [HealthKit] - Apple health monitor API
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Mobile Features:
+- Bluetooth
+- Audio
+- Apple Watch connectivity
+- Spotify connectivity
 
 ## License
 
