@@ -1,0 +1,6 @@
+framework module Pods__Beats {
+  umbrella header "Pods-♥Beats-umbrella.h"
+
+  export *
+  module * { export * }
+}
