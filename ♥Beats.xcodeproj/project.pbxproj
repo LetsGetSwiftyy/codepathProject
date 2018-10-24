@@ -11,12 +11,12 @@
 		870797BFDC136BF062542D6C /* Pods__BeatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4677AE3EA914F11DE458A5 /* Pods__BeatsTests.framework */; };
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
 		AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */; };
-		AA3F5FEC218024E400A97B50 /* AuthorizationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE7218024E400A97B50 /* AuthorizationManger.swift */; };
-		AA3F5FED218024E400A97B50 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE8218024E400A97B50 /* HeartRate.swift */; };
-		AA3F5FEE218024E400A97B50 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE9218024E400A97B50 /* HeartRateManager.swift */; };
-		AA3F5FEF218024E400A97B50 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FEA218024E400A97B50 /* WorkoutManager.swift */; };
-		AA3F5FF0218024E400A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FEB218024E400A97B50 /* HKUnit+BeatsPerMinute.swift */; };
 		AA3F5FFC21803A5200A97B50 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */; };
+		AA3F60022180434700A97B50 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60012180434700A97B50 /* AuthorizationManager.swift */; };
+		AA3F60042180436E00A97B50 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60032180436E00A97B50 /* HeartRateManager.swift */; };
+		AA3F60062180439400A97B50 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60052180439400A97B50 /* WorkoutManager.swift */; };
+		AA3F6008218043C400A97B50 /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F6007218043C400A97B50 /* HeartRate.swift */; };
+		AA3F600A218043E500A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F6009218043E500A97B50 /* HKUnit+BeatsPerMinute.swift */; };
 		AA49813521779AA7008020AC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA49813421779AA7008020AC /* HealthKit.framework */; };
 		AA6EB1FC2171119A0052D83C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EB1FB2171119A0052D83C /* AppDelegate.swift */; };
 		AA6EB1FE2171119B0052D83C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EB1FD2171119B0052D83C /* ViewController.swift */; };
@@ -116,12 +116,12 @@
 		83051FC9E23E79C4491EA8FB /* Pods-watchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-watchApp/Pods-watchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9F16B7235574A20E7B5F0D7F /* Pods-♥BeatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥BeatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		AA3F5FE7218024E400A97B50 /* AuthorizationManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationManger.swift; path = "../../../../Downloads/HeartControl-master/Heart Control WatchKit Extension/AuthorizationManger.swift"; sourceTree = "<group>"; };
-		AA3F5FE8218024E400A97B50 /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeartRate.swift; path = "../../../../Downloads/HeartControl-master/Heart Control WatchKit Extension/HeartRate.swift"; sourceTree = "<group>"; };
-		AA3F5FE9218024E400A97B50 /* HeartRateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = "../../../../Downloads/HeartControl-master/Heart Control WatchKit Extension/HeartRateManager.swift"; sourceTree = "<group>"; };
-		AA3F5FEA218024E400A97B50 /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutManager.swift; path = "../../../../Downloads/HeartControl-master/Heart Control WatchKit Extension/WorkoutManager.swift"; sourceTree = "<group>"; };
-		AA3F5FEB218024E400A97B50 /* HKUnit+BeatsPerMinute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HKUnit+BeatsPerMinute.swift"; path = "../../../../Downloads/HeartControl-master/Heart Control WatchKit Extension/HKUnit+BeatsPerMinute.swift"; sourceTree = "<group>"; };
 		AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		AA3F60012180434700A97B50 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		AA3F60032180436E00A97B50 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
+		AA3F60052180439400A97B50 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		AA3F6007218043C400A97B50 /* HeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
+		AA3F6009218043E500A97B50 /* HKUnit+BeatsPerMinute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKUnit+BeatsPerMinute.swift"; sourceTree = "<group>"; };
 		AA49813421779AA7008020AC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AA4D29DF217A2C8E003782B4 /* ♥Beats.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "♥Beats.entitlements"; sourceTree = "<group>"; };
 		AA52DBB7217C6E9300824C47 /* watchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "watchApp Extension.entitlements"; path = "../watchApp Extension.entitlements"; sourceTree = "<group>"; };
@@ -202,6 +202,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA3F5FFD218042FD00A97B50 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AA3F60012180434700A97B50 /* AuthorizationManager.swift */,
+				AA3F60032180436E00A97B50 /* HeartRateManager.swift */,
+				AA3F60052180439400A97B50 /* WorkoutManager.swift */,
+				AA3F6007218043C400A97B50 /* HeartRate.swift */,
+				AA3F6009218043E500A97B50 /* HKUnit+BeatsPerMinute.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		AA4D29EB217A513E003782B4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,12 +298,8 @@
 		AA6EB23B2171132F0052D83C /* watchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AA3F5FFD218042FD00A97B50 /* Manager */,
 				AA6EB2442171132F0052D83C /* Info.plist */,
-				AA3F5FE7218024E400A97B50 /* AuthorizationManger.swift */,
-				AA3F5FE8218024E400A97B50 /* HeartRate.swift */,
-				AA3F5FE9218024E400A97B50 /* HeartRateManager.swift */,
-				AA3F5FEB218024E400A97B50 /* HKUnit+BeatsPerMinute.swift */,
-				AA3F5FEA218024E400A97B50 /* WorkoutManager.swift */,
 				AA4D29EB217A513E003782B4 /* Supporting Files */,
 				AA6EB23E2171132F0052D83C /* ExtensionDelegate.swift */,
 				AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */,
@@ -658,13 +666,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3F5FF0218024E400A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */,
+				AA3F600A218043E500A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */,
+				AA3F6008218043C400A97B50 /* HeartRate.swift in Sources */,
 				AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */,
-				AA3F5FEC218024E400A97B50 /* AuthorizationManger.swift in Sources */,
+				AA3F60062180439400A97B50 /* WorkoutManager.swift in Sources */,
+				AA3F60022180434700A97B50 /* AuthorizationManager.swift in Sources */,
 				AA6EB2412171132F0052D83C /* NotificationController.swift in Sources */,
-				AA3F5FEE218024E400A97B50 /* HeartRateManager.swift in Sources */,
-				AA3F5FEF218024E400A97B50 /* WorkoutManager.swift in Sources */,
-				AA3F5FED218024E400A97B50 /* HeartRate.swift in Sources */,
+				AA3F60042180436E00A97B50 /* HeartRateManager.swift in Sources */,
 				AA6EB23F2171132F0052D83C /* ExtensionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
