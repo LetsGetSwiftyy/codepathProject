@@ -11,17 +11,17 @@ import HealthKit
 import Foundation
 
 class HeartInterfaceController: WKInterfaceController {
-    @IBOutlet var heartImageView: WKInterfaceImage!
+//    @IBOutlet var heartImageView: WKInterfaceMovie!
     
+    
+    @IBOutlet var heartImageView: WKInterfaceGroup!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         heartBeating()
-        
-        heartImageView.setImageNamed("frame-")
-        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 4), duration: 1, repeatCount: -1)
+        heartImageView.setBackgroundImageNamed("heart-")
+        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 7), duration: 1, repeatCount: -1)
 
-//        heartImageView.startAnimatingWithImages(in: NSRange, duration: <#T##TimeInterval#>, repeatCount: <#T##Int#>)
     }
     
     func heartBeating() {

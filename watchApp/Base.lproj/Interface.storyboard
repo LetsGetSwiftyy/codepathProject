@@ -14,14 +14,18 @@
             <objects>
                 <controller id="UTU-Ob-3WO" customClass="HeartInterfaceController" customModule="watchApp_Extension">
                     <items>
-                        <imageView height="163" alignment="left" contentMode="scaleAspectFit" id="b7i-dz-7R6"/>
+                        <group width="181" height="146" alignment="center" verticalAlignment="center" backgroundImage="heart-0" radius="25" id="5ur-f1-Um8">
+                            <items>
+                                <button width="1" alignment="center" verticalAlignment="center" title="Button" id="X9O-UY-0Bc"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="heartImageView" destination="b7i-dz-7R6" id="Qax-NC-xzl"/>
+                        <outlet property="heartImageView" destination="5ur-f1-Um8" id="3fY-bY-0A7"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="219.69230769230771" y="346.53846153846155"/>
+            <point key="canvasLocation" x="220" y="358"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
