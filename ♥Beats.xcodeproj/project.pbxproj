@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1280F0ACB93BCBC2302A931B /* Pods_watchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D7649D0DD031CD784FC36F /* Pods_watchApp.framework */; };
+		1C59194621801B7D000A25F6 /* HeartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */; };
+		1C59194821801E86000A25F6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C59194721801E86000A25F6 /* QuartzCore.framework */; };
 		870797BFDC136BF062542D6C /* Pods__BeatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4677AE3EA914F11DE458A5 /* Pods__BeatsTests.framework */; };
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
 		AA6EB1FC2171119A0052D83C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6EB1FB2171119A0052D83C /* AppDelegate.swift */; };
@@ -87,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartInterfaceController.swift; sourceTree = "<group>"; };
+		1C59194721801E86000A25F6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2604E08942B244E2597E6A96 /* Pods-♥BeatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥BeatsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		283574FD158E290A6AF75D32 /* Pods-watchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-watchApp/Pods-watchApp.release.xcconfig"; sourceTree = "<group>"; };
 		2A8A7FB68674A74323718B2B /* Pods-♥Beats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥Beats.release.xcconfig"; path = "Pods/Target Support Files/Pods-♥Beats/Pods-♥Beats.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C59194821801E86000A25F6 /* QuartzCore.framework in Frameworks */,
+				AA49813521779AA7008020AC /* HealthKit.framework in Frameworks */,
 				A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +258,7 @@
 				AA6EB2442171132F0052D83C /* Info.plist */,
 				AA6EB2452171132F0052D83C /* PushNotificationPayload.apns */,
 				AA6EB251217138530052D83C /* BPMInterfaceController.swift */,
+				1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */,
 			);
 			path = "watchApp Extension";
 			sourceTree = "<group>";
@@ -259,6 +266,7 @@
 		AA6EB254217138FA0052D83C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C59194721801E86000A25F6 /* QuartzCore.framework */,
 				AA6EB255217138FA0052D83C /* HealthKit.framework */,
 				E2D7649D0DD031CD784FC36F /* Pods_watchApp.framework */,
 				7C42EAAB9EFA90E91180DFE7 /* Pods_watchApp_Extension.framework */,
@@ -627,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C59194621801B7D000A25F6 /* HeartInterfaceController.swift in Sources */,
 				AA6EB252217138530052D83C /* BPMInterfaceController.swift in Sources */,
 				AA6EB2412171132F0052D83C /* NotificationController.swift in Sources */,
 				AA6EB23F2171132F0052D83C /* ExtensionDelegate.swift in Sources */,

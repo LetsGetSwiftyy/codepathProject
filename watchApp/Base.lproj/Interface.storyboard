@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="watch38" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UTU-Ob-3WO">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="n47-Ck-qZd">
+        <!--Heart Interface Controller-->
+        <scene sceneID="QF9-7W-Ouc">
             <objects>
-                <controller id="1mU-dq-dNa" customClass="BPMInterfaceController" customModule="watchApp_Extension">
+                <controller id="UTU-Ob-3WO" customClass="HeartInterfaceController" customModule="watchApp_Extension">
                     <items>
-                        <label width="31" height="24" alignment="left" text="BPM" textAlignment="center" id="4w2-LK-APf">
-                            <color key="textColor" white="0.60066731770833337" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
+                        <imageView height="163" alignment="left" contentMode="scaleAspectFit" id="b7i-dz-7R6"/>
                     </items>
+                    <connections>
+                        <outlet property="heartImageView" destination="b7i-dz-7R6" id="Qax-NC-xzl"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="205" y="331"/>
+            <point key="canvasLocation" x="219.69230769230771" y="346.53846153846155"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
