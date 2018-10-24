@@ -1,49 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1mU-dq-dNa">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="n47-Ck-qZd">
             <objects>
-                <controller id="1mU-dq-dNa" customClass="BPMInterfaceController" customModule="watchApp_Extension">
+                <controller id="1mU-dq-dNa" customClass="InterfaceController" customModule="watchApp_Extension">
                     <items>
-                        <label width="31" height="24" alignment="left" text="BPM" textAlignment="center" id="4w2-LK-APf">
-                            <color key="textColor" white="0.60066731770833337" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </label>
+                        <group width="136" height="61" alignment="left" id="73m-QS-1l2">
+                            <items>
+                                <label alignment="right" text="BPM" textAlignment="right" id="Z0D-GD-S6V"/>
+                                <label alignment="center" verticalAlignment="center" text="--" textAlignment="left" numberOfLines="0" id="wZM-id-Leu">
+                                    <fontDescription key="font" type="system" pointSize="60"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Start" id="rV6-sB-BYi">
+                            <connections>
+                                <action selector="didTapButton" destination="1mU-dq-dNa" id="GrW-1T-idw"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="controlButton" destination="rV6-sB-BYi" id="zVi-sC-i70"/>
+                        <outlet property="heartRateLabel" destination="wZM-id-Leu" id="e8P-v2-gZJ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="205" y="331"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchApp" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
 </document>
