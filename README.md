@@ -13,24 +13,24 @@ The playlist can then be shared with others, or saved to the user.
 
 **Required** -Required (core) user stories for your app in a bulleted list
 
--[x]The App should be able to communicate with the Apple Watch.
+-[x] The App should be able to communicate with the Apple Watch.
 
--[ ]Apple Watch data will be privatized and utilized solely for the user.
+-[ ] Apple Watch data will be privatized and utilized solely for the user.
 
--[ ]The playlist generated will be reasonably adjusted according to the Apple Watch data.
+-[ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
--[ ]The user will be able to connect to Spotify
+-[ ] The user will be able to connect to Spotify
 
--[x]The App will be able to track the users BPM
+-[x] The App will be able to track the users BPM
 
--[ ]User is able to see a moving heart icon with a play button. Below will show your current BPMable
+-[ ] User is able to see a moving heart icon with a play button. Below will show your current BPMable
 
 
 **Optional** -Optional (nice to have) user stories listed separately
 
--[ ]The app can be fine tuned to give more balanced options.
+-[ ] The app can be fine tuned to give more balanced options.
 
--[ ]The automated playlist can be shared to other users.
+-[ ] The automated playlist can be shared to other users.
 
 
 ## Wireframe
