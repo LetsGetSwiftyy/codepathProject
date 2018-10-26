@@ -9,14 +9,40 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="n47-Ck-qZd">
+            <objects>
+                <controller id="1mU-dq-dNa" customClass="InterfaceController" customModule="watchApp_Extension">
+                    <items>
+                        <group width="136" height="61" alignment="left" id="73m-QS-1l2">
+                            <items>
+                                <label alignment="right" text="BPM" textAlignment="right" id="Z0D-GD-S6V"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="controlButton" destination="rV6-sB-BYi" id="zVi-sC-i70"/>
+                        <outlet property="heartRateLabel" destination="wZM-id-Leu" id="e8P-v2-gZJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="371" y="637"/>
+        </scene>
         <!--Heart Interface Controller-->
         <scene sceneID="QF9-7W-Ouc">
             <objects>
                 <controller id="UTU-Ob-3WO" customClass="HeartInterfaceController" customModule="watchApp_Extension">
                     <items>
-                        <group width="181" height="146" alignment="center" verticalAlignment="center" backgroundImage="heart-0" radius="25" id="5ur-f1-Um8">
+                        <group width="181" height="146" alignment="center" verticalAlignment="center" radius="25" id="5ur-f1-Um8">
                             <items>
-                                <button width="1" alignment="center" verticalAlignment="center" title="Button" id="X9O-UY-0Bc"/>
+                                <label height="72" alignment="left" text="--" textAlignment="left" numberOfLines="0" id="wZM-id-Leu">
+                                    <fontDescription key="font" type="system" pointSize="60"/>
+                                </label>
+                                <button width="1" alignment="left" title="Start" id="rV6-sB-BYi">
+                                    <connections>
+                                        <action selector="didTapButton" destination="1mU-dq-dNa" id="GrW-1T-idw"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
@@ -25,30 +51,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="358"/>
-        </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
-            <objects>
-                <notificationController id="YCC-NB-fut">
-                    <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
-                    </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
-                    <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
-                    </connections>
-                </notificationController>
-            </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="watchApp" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="215.33333333333334" y="317.76923076923077"/>
         </scene>
     </scenes>
 </document>
