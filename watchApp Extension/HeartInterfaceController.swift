@@ -11,10 +11,12 @@ import HealthKit
 import Foundation
 
 class HeartInterfaceController: WKInterfaceController {
-//    @IBOutlet var heartImageView: WKInterfaceMovie!
-    
-    
+    @IBOutlet var heartRateLabel: WKInterfaceLabel!
+    @IBOutlet var controlButton: WKInterfaceButton!
     @IBOutlet var heartImageView: WKInterfaceGroup!
+    
+    private let workoutManager = WorkoutManager()
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -29,13 +31,46 @@ class HeartInterfaceController: WKInterfaceController {
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        // Configure workout manager.
+        workoutManager.delegate = self as? WorkoutManagerDelegate
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    @IBAction func didTapButton() {
+        switch workoutManager.state {
+        case .started:
+            // Stop current workout.
+            workoutManager.stop()
+            print("Stopped")
+            break
+        case .stopped:
+            // Start new workout.
+            workoutManager.start()
+            print("Started")
+            break
+        }
+    }
 
+}
+
+// MARK: - Workout Manager Delegate
+
+extension InterfaceController: WorkoutManagerDelegate {
+    
+    func workoutManager(_ manager: WorkoutManager, didChangeStateTo newState: WorkoutState) {
+        // Update title of control button.
+        //controlButton.setTitle(newState.actionText())
+    }
+    
+    func workoutManager(_ manager: WorkoutManager, didChangeHeartRateTo newHeartRate: HeartRate) {
+        // Update heart rate label.
+        controlButton.setTitle(String(format: "%.0f", newHeartRate.bpm))
+    }
+    
 }

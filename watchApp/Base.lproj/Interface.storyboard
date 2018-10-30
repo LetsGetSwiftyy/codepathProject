@@ -20,13 +20,9 @@
                             </items>
                         </group>
                     </items>
-                    <connections>
-                        <outlet property="controlButton" destination="rV6-sB-BYi" id="zVi-sC-i70"/>
-                        <outlet property="heartRateLabel" destination="wZM-id-Leu" id="e8P-v2-gZJ"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="371" y="637"/>
+            <point key="canvasLocation" x="215" y="639"/>
         </scene>
         <!--Heart Interface Controller-->
         <scene sceneID="QF9-7W-Ouc">
@@ -35,19 +31,22 @@
                     <items>
                         <group width="181" height="146" alignment="center" verticalAlignment="center" radius="25" id="5ur-f1-Um8">
                             <items>
-                                <label height="72" alignment="left" text="--" textAlignment="left" numberOfLines="0" id="wZM-id-Leu">
+                                <label height="72" alignment="center" verticalAlignment="center" text="--" textAlignment="left" numberOfLines="0" id="wZM-id-Leu">
                                     <fontDescription key="font" type="system" pointSize="60"/>
                                 </label>
-                                <button width="1" alignment="left" title="Start" id="rV6-sB-BYi">
+                                <button width="1" alignment="center" verticalAlignment="center" title="--" id="rV6-sB-BYi">
+                                    <fontDescription key="font" type="system" pointSize="60"/>
                                     <connections>
-                                        <action selector="didTapButton" destination="1mU-dq-dNa" id="GrW-1T-idw"/>
+                                        <action selector="didTapButton" destination="UTU-Ob-3WO" id="kxk-Yr-H2Z"/>
                                     </connections>
                                 </button>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="heartImageView" destination="5ur-f1-Um8" id="3fY-bY-0A7"/>
+                        <outlet property="controlButton" destination="rV6-sB-BYi" id="Gqq-LY-Akj"/>
+                        <outlet property="heartImageView" destination="5ur-f1-Um8" id="IhT-g2-AZk"/>
+                        <outlet property="heartRateLabel" destination="wZM-id-Leu" id="pJw-sd-0At"/>
                     </connections>
                 </controller>
             </objects>
