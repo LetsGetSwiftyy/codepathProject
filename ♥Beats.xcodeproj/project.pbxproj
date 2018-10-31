@@ -19,6 +19,7 @@
 		1C9DA6C32187E22F00870DBD /* SinglePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6C22187E22F00870DBD /* SinglePlaylistViewController.swift */; };
 		870797BFDC136BF062542D6C /* Pods__BeatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4677AE3EA914F11DE458A5 /* Pods__BeatsTests.framework */; };
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
+		A67C7C8A218458BC0068E0BC /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */; };
 		AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */; };
 		AA3F5FFC21803A5200A97B50 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */; };
 		AA3F60022180434700A97B50 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60012180434700A97B50 /* AuthorizationManager.swift */; };
@@ -133,6 +134,8 @@
 		7C42EAAB9EFA90E91180DFE7 /* Pods_watchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchApp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83051FC9E23E79C4491EA8FB /* Pods-watchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-watchApp/Pods-watchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9F16B7235574A20E7B5F0D7F /* Pods-♥BeatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥BeatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		A67C7C8B21845A1E0068E0BC /* Cisco.-Beats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Cisco.-Beats-Bridging-Header.h"; path = "../Cisco.-Beats-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		AA3F60012180434700A97B50 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			files = (
 				1C59194821801E86000A25F6 /* QuartzCore.framework in Frameworks */,
 				AA49813521779AA7008020AC /* HealthKit.framework in Frameworks */,
+				A67C7C8A218458BC0068E0BC /* SpotifyiOS.framework in Frameworks */,
 				A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +297,7 @@
 				AA6EB2042171119C0052D83C /* LaunchScreen.storyboard */,
 				AA6EB2072171119C0052D83C /* Info.plist */,
 				AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */,
+				A67C7C8B21845A1E0068E0BC /* Cisco.-Beats-Bridging-Header.h */,
 				1C9DA6B72183767A00870DBD /* HeartViewController.swift */,
 			);
 			path = "♥Beats";
@@ -346,6 +351,7 @@
 				1C59194721801E86000A25F6 /* QuartzCore.framework */,
 				AA6EB255217138FA0052D83C /* HealthKit.framework */,
 				AA49813421779AA7008020AC /* HealthKit.framework */,
+				A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */,
 				E2D7649D0DD031CD784FC36F /* Pods_watchApp.framework */,
 				7C42EAAB9EFA90E91180DFE7 /* Pods_watchApp_Extension.framework */,
 				4E860DB4245375DA657A1162 /* Pods__Beats.framework */,
@@ -895,14 +901,20 @@
 				CODE_SIGN_ENTITLEMENTS = "♥Beats/♥Beats.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966D857F3T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "♥Beats/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cisco.-Beats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cisco.-Beats-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -917,14 +929,20 @@
 				CODE_SIGN_ENTITLEMENTS = "♥Beats/♥Beats.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 966D857F3T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "♥Beats/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Cisco.-Beats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cisco.-Beats-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
