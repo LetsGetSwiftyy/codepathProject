@@ -11,9 +11,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var authorized: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authorized = false
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authorizeTapped(_ sender: Any) {
-        HealthKitManager.authorizeHealthKit()
+        authorized = HealthKitManager.authorizeHealthKit()
     }
     
 }

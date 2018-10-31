@@ -6,6 +6,7 @@ target 'watchApp' do
   use_frameworks!
 
   # Pods for watchApp
+  pod "Pulsator"
 
 end
 
@@ -14,7 +15,7 @@ target 'watchApp Extension' do
   use_frameworks!
 
   # Pods for watchApp Extension
-
+  
 end
 
 target '♥Beats' do

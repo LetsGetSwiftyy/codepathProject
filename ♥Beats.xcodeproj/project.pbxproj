@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1280F0ACB93BCBC2302A931B /* Pods_watchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D7649D0DD031CD784FC36F /* Pods_watchApp.framework */; };
+		1C59194621801B7D000A25F6 /* HeartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */; };
+		1C59194821801E86000A25F6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C59194721801E86000A25F6 /* QuartzCore.framework */; };
+		1C9DA6B621836E2A00870DBD /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 1C9DA6B521836E2A00870DBD /* PushNotificationPayload.apns */; };
+		1C9DA6B82183767A00870DBD /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6B72183767A00870DBD /* HeartViewController.swift */; };
+		1C9DA6BB2187E18F00870DBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6BA2187E18F00870DBD /* LoginViewController.swift */; };
+		1C9DA6BD2187E19D00870DBD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6BC2187E19D00870DBD /* SignUpViewController.swift */; };
+		1C9DA6BF2187E1BC00870DBD /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6BE2187E1BC00870DBD /* SongCell.swift */; };
+		1C9DA6C12187E1E300870DBD /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6C02187E1E300870DBD /* PlaylistsViewController.swift */; };
+		1C9DA6C32187E22F00870DBD /* SinglePlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DA6C22187E22F00870DBD /* SinglePlaylistViewController.swift */; };
 		870797BFDC136BF062542D6C /* Pods__BeatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4677AE3EA914F11DE458A5 /* Pods__BeatsTests.framework */; };
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
 		A67C7C8A218458BC0068E0BC /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */; };
@@ -105,6 +114,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartInterfaceController.swift; sourceTree = "<group>"; };
+		1C59194721801E86000A25F6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1C9DA6B521836E2A00870DBD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PushNotificationPayload.apns; path = "Supporting Files/PushNotificationPayload.apns"; sourceTree = "<group>"; };
+		1C9DA6B72183767A00870DBD /* HeartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
+		1C9DA6BA2187E18F00870DBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1C9DA6BC2187E19D00870DBD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1C9DA6BE2187E1BC00870DBD /* SongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		1C9DA6C02187E1E300870DBD /* PlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
+		1C9DA6C22187E22F00870DBD /* SinglePlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlaylistViewController.swift; sourceTree = "<group>"; };
 		2604E08942B244E2597E6A96 /* Pods-♥BeatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥BeatsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		283574FD158E290A6AF75D32 /* Pods-watchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-watchApp/Pods-watchApp.release.xcconfig"; sourceTree = "<group>"; };
 		2A8A7FB68674A74323718B2B /* Pods-♥Beats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥Beats.release.xcconfig"; path = "Pods/Target Support Files/Pods-♥Beats/Pods-♥Beats.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,7 +168,6 @@
 		AA6EB2402171132F0052D83C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		AA6EB2422171132F0052D83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA6EB2442171132F0052D83C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA6EB2452171132F0052D83C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		AA6EB253217138FA0052D83C /* watchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchApp Extension.entitlements"; sourceTree = "<group>"; };
 		AA6EB255217138FA0052D83C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		D7068387ED206AB818C63FC2 /* Pods-watchApp Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-watchApp Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-watchApp Extension/Pods-watchApp Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C59194821801E86000A25F6 /* QuartzCore.framework in Frameworks */,
 				AA49813521779AA7008020AC /* HealthKit.framework in Frameworks */,
 				A67C7C8A218458BC0068E0BC /* SpotifyiOS.framework in Frameworks */,
 				A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */,
@@ -206,6 +224,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9DA6B92187E17800870DBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1C9DA6BA2187E18F00870DBD /* LoginViewController.swift */,
+				1C9DA6BC2187E19D00870DBD /* SignUpViewController.swift */,
+				1C9DA6BE2187E1BC00870DBD /* SongCell.swift */,
+				1C9DA6C02187E1E300870DBD /* PlaylistsViewController.swift */,
+				1C9DA6C22187E22F00870DBD /* SinglePlaylistViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AA3F5FFD218042FD00A97B50 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +253,6 @@
 			children = (
 				AA52DBB7217C6E9300824C47 /* watchApp Extension.entitlements */,
 				AA6EB2402171132F0052D83C /* NotificationController.swift */,
-				AA6EB2452171132F0052D83C /* PushNotificationPayload.apns */,
 				AA6EB253217138FA0052D83C /* watchApp Extension.entitlements */,
 				AA6EB2422171132F0052D83C /* Assets.xcassets */,
 			);
@@ -259,6 +288,7 @@
 		AA6EB1FA2171119A0052D83C /* ♥Beats */ = {
 			isa = PBXGroup;
 			children = (
+				1C9DA6B92187E17800870DBD /* Views */,
 				AA4D29DF217A2C8E003782B4 /* ♥Beats.entitlements */,
 				AA6EB1FB2171119A0052D83C /* AppDelegate.swift */,
 				AA6EB1FD2171119B0052D83C /* ViewController.swift */,
@@ -268,6 +298,7 @@
 				AA6EB2072171119C0052D83C /* Info.plist */,
 				AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */,
 				A67C7C8B21845A1E0068E0BC /* Cisco.-Beats-Bridging-Header.h */,
+				1C9DA6B72183767A00870DBD /* HeartViewController.swift */,
 			);
 			path = "♥Beats";
 			sourceTree = "<group>";
@@ -305,6 +336,8 @@
 			children = (
 				AA3F5FFD218042FD00A97B50 /* Manager */,
 				AA6EB2442171132F0052D83C /* Info.plist */,
+				1C9DA6B521836E2A00870DBD /* PushNotificationPayload.apns */,
+				1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */,
 				AA4D29EB217A513E003782B4 /* Supporting Files */,
 				AA6EB23E2171132F0052D83C /* ExtensionDelegate.swift */,
 				AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */,
@@ -315,6 +348,7 @@
 		AA6EB254217138FA0052D83C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C59194721801E86000A25F6 /* QuartzCore.framework */,
 				AA6EB255217138FA0052D83C /* HealthKit.framework */,
 				AA49813421779AA7008020AC /* HealthKit.framework */,
 				A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */,
@@ -543,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6EB2432171132F0052D83C /* Assets.xcassets in Resources */,
+				1C9DA6B621836E2A00870DBD /* PushNotificationPayload.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,9 +681,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9DA6BD2187E19D00870DBD /* SignUpViewController.swift in Sources */,
 				AA6EB1FE2171119B0052D83C /* ViewController.swift in Sources */,
 				AA6EB1FC2171119A0052D83C /* AppDelegate.swift in Sources */,
+				1C9DA6BF2187E1BC00870DBD /* SongCell.swift in Sources */,
+				1C9DA6C12187E1E300870DBD /* PlaylistsViewController.swift in Sources */,
 				AA3F5FFC21803A5200A97B50 /* HealthKitManager.swift in Sources */,
+				1C9DA6BB2187E18F00870DBD /* LoginViewController.swift in Sources */,
+				1C9DA6C32187E22F00870DBD /* SinglePlaylistViewController.swift in Sources */,
+				1C9DA6B82183767A00870DBD /* HeartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C59194621801B7D000A25F6 /* HeartInterfaceController.swift in Sources */,
 				AA3F600A218043E500A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */,
 				AA3F6008218043C400A97B50 /* HeartRate.swift in Sources */,
 				AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */,
