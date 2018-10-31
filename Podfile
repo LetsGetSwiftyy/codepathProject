@@ -4,9 +4,8 @@
 target 'watchApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for watchApp
-  pod "Pulsator"
+
 
 end
 
@@ -23,6 +22,7 @@ target '♥Beats' do
   use_frameworks!
 
   # Pods for ♥Beats
+    pod 'Firebase/Core'
 
   target '♥BeatsTests' do
     inherit! :search_paths
