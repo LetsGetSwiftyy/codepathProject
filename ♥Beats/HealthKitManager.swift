@@ -13,14 +13,25 @@ class HealthKitManager: NSObject {
     
     static let healthKitStore = HKHealthStore()
     
-    static func authorizeHealthKit() {
+    static func authorizeHealthKit() -> Bool {
+        
+        var authorized: Bool!
         
         let healthKitTypes: Set = [
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
         ]
         
-        healthKitStore.requestAuthorization(toShare: healthKitTypes,
-                                            read: healthKitTypes) { _, _ in }
+        healthKitStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (success, error) in
+            if success {
+                authorized = true
+            }
+            else
+            {
+                authorized = false
+            }
+        }
+        
+        return authorized
     }
 }

@@ -15,7 +15,7 @@ The playlist can then be shared with others, or saved to the user.
 
 - [x] The App should be able to communicate with the Apple Watch.
 
-- [ ] Apple Watch data will be privatized and utilized solely for the user.
+- [x] Apple Watch data will be privatized and utilized solely for the user.
 
 - [ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
@@ -23,7 +23,7 @@ The playlist can then be shared with others, or saved to the user.
 
 - [x] The App will be able to track the users BPM
 
-- [ ] User is able to see a moving heart icon with a play button. Below will show your current BPMable
+- [x] User is able to see a moving heart icon with a play button. Below will show your current BPMable
 
 
 **Optional** -Optional (nice to have) user stories listed separately

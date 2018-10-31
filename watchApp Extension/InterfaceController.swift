@@ -47,18 +47,18 @@ class InterfaceController: WKInterfaceController {
     
 }
 
-// MARK: - Workout Manager Delegate
-
-extension InterfaceController: WorkoutManagerDelegate {
-    
-    func workoutManager(_ manager: WorkoutManager, didChangeStateTo newState: WorkoutState) {
-        // Update title of control button.
-        controlButton.setTitle(newState.actionText())
-    }
-    
-    func workoutManager(_ manager: WorkoutManager, didChangeHeartRateTo newHeartRate: HeartRate) {
-        // Update heart rate label.
-        heartRateLabel.setText(String(format: "%.0f", newHeartRate.bpm))
-    }
-    
-}
+//// MARK: - Workout Manager Delegate
+//
+//extension InterfaceController: WorkoutManagerDelegate {
+//    
+//    func workoutManager(_ manager: WorkoutManager, didChangeStateTo newState: WorkoutState) {
+//        // Update title of control button.
+//        controlButton.setTitle(newState.actionText())
+//    }
+//    
+//    func workoutManager(_ manager: WorkoutManager, didChangeHeartRateTo newHeartRate: HeartRate) {
+//        // Update heart rate label.
+//        heartRateLabel.setText(String(format: "%.0f", newHeartRate.bpm))
+//    }
+//    
+//}
