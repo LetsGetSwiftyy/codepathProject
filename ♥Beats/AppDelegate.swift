@@ -17,6 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
     
     private let healthStore = HKHealthStore()
     
+    //Spotify Setup
+    
+    let SpotifyClientID = ProcessInfo.processInfo.environment["CLIENT_ID"]!
+    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    
+    lazy var configuration = SPTConfiguration(
+        clientID: SpotifyClientID,
+        redirectURL: SpotifyRedirectURL
+    )
+    
+    
+    //setup Spotify Token Swap
+    lazy var sessionManager: SPTSessionManager = {
+        if let tokenSwapURL = URL(string: "https://test-spotify-token-swap.herokuapp.com/token"),
+            let tokenRefreshURL = URL(string: "https://test-spotify-token-swap.herokuapp.com/api/refresh_token") {
+            self.configuration.tokenSwapURL = tokenSwapURL
+            self.configuration.tokenRefreshURL = tokenRefreshURL
+            self.configuration.playURI = ""
+        }
+        let manager = SPTSessionManager(configuration: self.configuration, delegate: self)
+        return manager
+    }()
+    
+    
+    
+    
+    
     var window: UIWindow?
     
     // MARK: - Lifecycle
@@ -32,13 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
         }
     }
     
-    let SpotifyClientID = "Heartbeat Project"
-    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
-    
-    lazy var configuration = SPTConfiguration(
-        clientID: SpotifyClientID,
-        redirectURL: SpotifyRedirectURL
-    )
     
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
         print("success", session)
