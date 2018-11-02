@@ -26,6 +26,9 @@ class ViewController: UIViewController {
     
     @IBAction func authorizeTapped(_ sender: Any) {
         authorized = HealthKitManager.authorizeHealthKit()
+        if authorized {
+            
+        }
     }
     
 }

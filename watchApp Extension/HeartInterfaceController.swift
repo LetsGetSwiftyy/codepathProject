@@ -19,10 +19,10 @@ class HeartInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        heartBeating()
+    
         heartImageView.setBackgroundImageNamed("heart-")
-        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 7), duration: 1, repeatCount: -1)
+        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 7), duration: 4, repeatCount: -1)
+        heartBeating()
 
     }
     
