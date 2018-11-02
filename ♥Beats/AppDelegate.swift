@@ -10,9 +10,10 @@ import UIKit
 import HealthKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate {
     
     // MARK: - Properties
+    //
     
     private let healthStore = HKHealthStore()
     
@@ -29,6 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         healthStore.handleAuthorizationForExtension { success, error in
             print(success)
         }
+    }
+    
+    let SpotifyClientID = "Heartbeat Project"
+    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
+    
+    lazy var configuration = SPTConfiguration(
+        clientID: SpotifyClientID,
+        redirectURL: SpotifyRedirectURL
+    )
+    
+    func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
+        print("success", session)
+    }
+    func sessionManager(manager: SPTSessionManager, didFailWith error: Error) {
+        print("fail", error)
+    }
+    func sessionManager(manager: SPTSessionManager, didRenew session: SPTSession) {
+        print("renewed", session)
     }
     
 }
