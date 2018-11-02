@@ -10,7 +10,7 @@ import UIKit
 import HealthKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate, SPTAppRemoteDelegate {
     
     // MARK: - Properties
     //
@@ -40,6 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
         return manager
     }()
     
+    //init appRemote
+    lazy var appRemote: SPTAppRemote = {
+        let appRemote = SPTAppRemote(configuration: self.configuration, logLevel: .debug)
+        appRemote.delegate = self
+        return appRemote
+    }()
     
     
     
@@ -54,11 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate
     
     func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
         // Authorize access to health data for watch.
+        let requestedScopes: SPTScope = [.appRemoteControl]
+        self.sessionManager.initiateSession(with: requestedScopes, options: .default)
+
         healthStore.handleAuthorizationForExtension { success, error in
             print(success)
         }
     }
-    
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        self.sessionManager.application(app, open: url, options: options)
+        return true
+    }
     
     func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
         print("success", session)
