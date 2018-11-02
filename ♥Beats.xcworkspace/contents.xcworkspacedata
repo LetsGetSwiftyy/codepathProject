@@ -2,7 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:♥Beats.xcodeproj">
+      location = "group:&#x2665;Beats/../Cisco.-Beats-Bridging-Header.h">
+   </FileRef>
+   <FileRef
+      location = "group:SpotifyiOS.framework">
+   </FileRef>
+   <FileRef
+      location = "group:&#x2665;Beats.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
