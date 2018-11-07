@@ -450,7 +450,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="playlistCover" destination="xtf-cO-nE2" id="qPl-aR-QOV"/>
                                             <outlet property="playlistTitle" destination="38p-sZ-KF9" id="JOO-Db-DLQ"/>
+                                            <outlet property="songCount" destination="xaA-og-pQB" id="4ht-es-MaL"/>
                                             <segue destination="lle-y4-ES6" kind="presentation" identifier="playlistSegue" id="pMD-tB-3I9"/>
                                         </connections>
                                     </tableViewCell>
@@ -472,8 +474,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Playlists" id="cQx-lr-7zH"/>
                     <connections>
-                        <outlet property="playlistCover" destination="xtf-cO-nE2" id="hKy-fk-QkI"/>
-                        <outlet property="songCount" destination="xaA-og-pQB" id="pC5-mz-OYH"/>
                         <outlet property="tableView" destination="f29-RY-A1A" id="bOf-6b-9tu"/>
                     </connections>
                 </viewController>

@@ -10,8 +10,6 @@ import UIKit
 
 class PlaylistsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var songCount: UILabel!
-    @IBOutlet weak var playlistCover: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
