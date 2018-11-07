@@ -37,8 +37,6 @@ class ViewController: UIViewController, SPTAppRemoteDelegate, SPTSessionManagerD
         spotifyConnectButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         spotifyConnectButton.sizeToFit()
         spotifyConnectButton.addTarget(self, action: #selector(didTapConnect(_:)), for: .touchUpInside)
-        
-        
         authorized = false
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,6 +54,7 @@ class ViewController: UIViewController, SPTAppRemoteDelegate, SPTSessionManagerD
         let scope: SPTScope = [.appRemoteControl, .playlistReadPrivate]
         sessionManager.initiateSession(with: scope, options: .clientOnly)
         print("Success!")
+        self.performSegue(withIdentifier: "playlistSegue", sender: nil)
     }
     
     
@@ -84,7 +83,7 @@ class ViewController: UIViewController, SPTAppRemoteDelegate, SPTSessionManagerD
             let tokenRefreshURL = URL(string: "https://test-spotify-token-swap.herokuapp.com/api/refresh_token") {
             self.configuration.tokenSwapURL = tokenSwapURL
             self.configuration.tokenRefreshURL = tokenRefreshURL
-            self.configuration.playURI = ""
+            self.configuration.playURI = "spotify:track:6bjYPIzpMjFhlYbgPhi8AP"
         }
         let manager = SPTSessionManager(configuration: self.configuration, delegate: self)
         return manager

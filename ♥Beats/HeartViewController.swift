@@ -15,14 +15,14 @@ class HeartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        heartBeating()
-        heartViewImage.image = UIImage(named: "heart-")
-        range = NSMakeRange(0, 7);
-        array.subarray(with: range)
-        heartViewImage.animationImages = array as! [UIImage]
-        heartViewImage.animationRepeatCount = -1
-        heartViewImage.animationDuration = 1
+//
+//        heartBeating()
+//        heartViewImage.image = UIImage(named: "heart-")
+//        range = NSMakeRange(0, 7);
+//        array.subarray(with: range)
+//        heartViewImage.animationImages = array as! [UIImage]
+//        heartViewImage.animationRepeatCount = -1
+//        heartViewImage.animationDuration = 1
     }
     
     func heartBeating() {
