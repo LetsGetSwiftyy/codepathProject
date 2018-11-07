@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,7 +55,7 @@
 		3DBD7B238B322E7A38FE50AAF718B4B0 /* Pods-♥BeatsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-♥BeatsTests.modulemap"; sourceTree = "<group>"; };
 		4036E33E9881ED1BC3E62B13E8BDAE2E /* Pods-watchApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watchApp-resources.sh"; sourceTree = "<group>"; };
 		42BA16DB6CE9A2162FD82FCE08EE8171 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49D671A825A1AD9E9A521C6BCCAB59C9 /* Pods__Beats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods__Beats.framework; path = "Pods-♥Beats.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49D671A825A1AD9E9A521C6BCCAB59C9 /* Pods__Beats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__Beats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A13E4F2750F5689A95D4F5A5DA53A8F /* Pods-♥Beats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-♥Beats.debug.xcconfig"; sourceTree = "<group>"; };
 		4ED6E9777BEE16C1DB1307732E3B7DA9 /* Pods-♥BeatsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-♥BeatsTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		50C5780D379339C649BBFB891F7AB483 /* Pods-♥Beats-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-♥Beats-resources.sh"; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		6730E87ABADB2C49B01E2F763B0F5AEA /* Pods-♥BeatsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-♥BeatsUITests-resources.sh"; sourceTree = "<group>"; };
 		6B50A5357E5364C5409DFB4B67C9DDA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F30033405EE46B452CB0521A3FFC46B /* Pods-watchApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-watchApp-dummy.m"; sourceTree = "<group>"; };
-		70BEECB4E6ED2E520AC170C45F96B1F1 /* Pods__BeatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods__BeatsTests.framework; path = "Pods-♥BeatsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BEECB4E6ED2E520AC170C45F96B1F1 /* Pods__BeatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__BeatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73406AA1024A80CA347DBAD639D5C7B2 /* Pods-watchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watchApp.release.xcconfig"; sourceTree = "<group>"; };
 		74F91F48EC3CA5781F181E1B1BCFA18F /* Pods-watchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		751A1D69C21B5516C2E9EAE5ECB9E801 /* Pods-♥BeatsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-♥BeatsTests-resources.sh"; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		8C05371D713EE34CA5F37F54CE7D02F8 /* Pods-♥BeatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-♥BeatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F81C8717FA948C5F104D7E503C84943 /* Pods-♥BeatsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-♥BeatsUITests-umbrella.h"; sourceTree = "<group>"; };
 		937B36CFD03D7492549DD55C2DE56E1F /* Pods-♥BeatsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-♥BeatsTests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EE34C2309B48F5466508388BA83C352 /* Pods-watchApp Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-watchApp Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A9F9AA07569518758D4CE3206B532594 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19A50163A045004C62E96AE20CF0742 /* Pods-watchApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-watchApp-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -90,14 +90,14 @@
 		C77A7AC69958D9F78EB63C4EC4ECB81C /* Pods-♥BeatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-♥BeatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7453EFF3831B576ED889DFC5B5AD36C /* Pods-watchApp Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-watchApp Extension-frameworks.sh"; sourceTree = "<group>"; };
 		D794539676D381641DFE4056A1315B90 /* Pods-♥Beats-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-♥Beats-dummy.m"; sourceTree = "<group>"; };
-		D8E89C9ED6277C66E3FD093404552F49 /* Pods_watchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watchApp.framework; path = "Pods-watchApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E89C9ED6277C66E3FD093404552F49 /* Pods_watchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB510AC4B73D30C4244F86839D144A9E /* Pods-watchApp Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-watchApp Extension-dummy.m"; sourceTree = "<group>"; };
 		E0D080259654527F2FD6A51B4432E46D /* Pods-♥BeatsTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-♥BeatsTests-frameworks.sh"; sourceTree = "<group>"; };
 		E6EAC2DD2D0ACCCE0A88CF1683847592 /* Pods-watchApp Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-watchApp Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E77640DDAFE615BB37FC5A8BC18E875D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		EA01C46D1DCB5E07112E62BE9D0D4F7B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECAC586253C427B715F2D64B6C7FB50F /* Pods__BeatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods__BeatsUITests.framework; path = "Pods-♥BeatsUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F19CDBC44CD604D9989B9DBFF4A3F68B /* Pods_watchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_watchApp_Extension.framework; path = "Pods-watchApp Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECAC586253C427B715F2D64B6C7FB50F /* Pods__BeatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__BeatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19CDBC44CD604D9989B9DBFF4A3F68B /* Pods_watchApp_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watchApp_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2229AFAA7207D0075038CFB15E81E9A /* Pods-♥BeatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-♥BeatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBF71BB25A9D3EE406E0CD74294F2E3E /* Pods-watchApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-watchApp-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -441,6 +441,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					C0F55F85CEDDB81EF918DB777510B440 = {
+						DevelopmentTeam = XLNX78VJ5X;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -638,11 +643,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥BeatsUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥BeatsUITests/Pods-♥BeatsUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -665,22 +666,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XLNX78VJ5X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-watchApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-watchApp/Pods-watchApp.modulemap";
 				OTHER_LDFLAGS = "";
@@ -780,11 +778,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥Beats/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥Beats/Pods-♥Beats.modulemap";
 				OTHER_LDFLAGS = "";
@@ -818,11 +812,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥BeatsUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥BeatsUITests/Pods-♥BeatsUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -856,11 +846,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥BeatsTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -894,11 +880,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥Beats/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥Beats/Pods-♥Beats.modulemap";
 				OTHER_LDFLAGS = "";
@@ -921,22 +903,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XLNX78VJ5X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-watchApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-watchApp/Pods-watchApp.modulemap";
 				OTHER_LDFLAGS = "";
@@ -972,11 +951,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-♥BeatsTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1010,11 +985,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-watchApp Extension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-watchApp Extension/Pods-watchApp Extension.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1049,11 +1020,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-watchApp Extension/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-watchApp Extension/Pods-watchApp Extension.modulemap";
 				OTHER_LDFLAGS = "";
