@@ -16,16 +16,17 @@ class HeartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        heartBeating()
         heartViewImage.image = UIImage(named: "heart-")
-        range = NSMakeRange(0, 7);
-        array.subarray(with: range)
-        heartViewImage.animationImages = array as! [UIImage]
-        heartViewImage.animationRepeatCount = -1
-        heartViewImage.animationDuration = 1
-    }
-    
-    func heartBeating() {
-        heartViewImage.startAnimating()
+        let imgListArray :NSMutableArray = []
+        for countValue in 0...6
+        {
+            let strImageName : String = "heart-\(countValue).png"
+            let image  = UIImage(named:strImageName)
+            imgListArray .add(image!)
+        }
+        
+        self.heartViewImage.animationImages = imgListArray as? [UIImage];
+        self.heartViewImage.animationDuration = 1.0
+        self.heartViewImage.startAnimating()
     }
 }
