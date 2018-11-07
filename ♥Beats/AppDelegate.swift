@@ -28,12 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
-
-        healthStore.handleAuthorizationForExtension { success, error in
-            print(success)
-        }
-    }
+//    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+//
+//        healthStore.handleAuthorizationForExtension { success, error in
+//            print(success)
+//        }
+//    }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
