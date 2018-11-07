@@ -19,15 +19,13 @@ class HeartInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+    
         heartBeating()
-        heartImageView.setBackgroundImageNamed("heart-")
-        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 7), duration: 1, repeatCount: -1)
-
     }
     
     func heartBeating() {
-        heartImageView.startAnimating()
+        heartImageView.setBackgroundImageNamed("heart-")
+        heartImageView.startAnimatingWithImages(in: NSMakeRange(0, 7), duration: 0.5, repeatCount: -1)
     }
 
     override func willActivate() {
@@ -65,12 +63,12 @@ extension InterfaceController: WorkoutManagerDelegate {
     
     func workoutManager(_ manager: WorkoutManager, didChangeStateTo newState: WorkoutState) {
         // Update title of control button.
-        //controlButton.setTitle(newState.actionText())
+        controlButton.setTitle(newState.actionText())
     }
     
     func workoutManager(_ manager: WorkoutManager, didChangeHeartRateTo newHeartRate: HeartRate) {
         // Update heart rate label.
-        controlButton.setTitle(String(format: "%.0f", newHeartRate.bpm))
+        //controlButton.setTitle(String(format: "%.0f", newHeartRate.bpm))
     }
     
 }

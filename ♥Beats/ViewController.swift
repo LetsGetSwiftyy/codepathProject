@@ -66,6 +66,9 @@ class ViewController: UIViewController, SPTAppRemoteDelegate, SPTSessionManagerD
     
     @IBAction func authorizeTapped(_ sender: Any) {
         authorized = HealthKitManager.authorizeHealthKit()
+        if authorized {
+            
+        }
     }
     
     

@@ -23,15 +23,15 @@ class HealthKitManager: NSObject {
         ]
         
         healthKitStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (success, error) in
-            if success {
-                authorized = true
-            }
-            else
-            {
-                authorized = false
-            }
+//            if success {
+//                authorized = true
+//            }
+//            else
+//            {
+//                authorized = false
+//            }
         }
-        
-        return authorized
+//
+        return true
     }
 }

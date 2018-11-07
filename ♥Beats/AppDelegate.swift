@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+//import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

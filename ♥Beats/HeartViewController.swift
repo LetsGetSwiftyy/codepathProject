@@ -13,19 +13,45 @@ class HeartViewController: UIViewController {
     var range: NSRange!
     var array: NSArray!
     
+    @IBOutlet weak var playBtn: UIButton!
+    let pause = UIImage(named: "pause")
+    let play = UIImage(named: "play")
+    var buttonClicked = true;
+    @IBOutlet weak var forwardBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var songName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        heartBeating()
-//        heartViewImage.image = UIImage(named: "heart-")
-//        range = NSMakeRange(0, 7);
-//        array.subarray(with: range)
-//        heartViewImage.animationImages = array as! [UIImage]
-//        heartViewImage.animationRepeatCount = -1
-//        heartViewImage.animationDuration = 1
+        
+        heartViewImage.image = UIImage(named: "heart-")
+        let imgListArray :NSMutableArray = []
+        for countValue in 0...6
+        {
+            let strImageName : String = "heart-\(countValue).png"
+            let image  = UIImage(named:strImageName)
+            imgListArray .add(image!)
+        }
+        
+        self.heartViewImage.animationImages = imgListArray as? [UIImage];
+        self.heartViewImage.animationDuration = 1.0
+        self.heartViewImage.startAnimating()
     }
     
-    func heartBeating() {
-        heartViewImage.startAnimating()
+    @IBAction func onPlay(_ sender: Any) {
+        if buttonClicked == false {
+            (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
+            buttonClicked = true;
+        } else {
+            (sender as! UIButton).setImage(self.play,for: UIControlState.normal);
+            buttonClicked = false;
+        }
     }
+    
+    @IBAction func onForwardClick(_ sender: Any) {
+    }
+    
+    @IBAction func onBackClick(_ sender: Any) {
+    }
+    
 }
