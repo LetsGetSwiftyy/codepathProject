@@ -17,9 +17,7 @@ The playlist can then be shared with others, or saved to the user.
 
 - [x] Apple Watch data will be privatized and utilized solely for the user.
 
-- [ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
-
-- [ ] The user will be able to connect to Spotify
+- [X] The user will be able to connect to Spotify
 
 - [x] The App will be able to track the users BPM
 
@@ -31,6 +29,8 @@ The playlist can then be shared with others, or saved to the user.
 - [ ] The app can be fine tuned to give more balanced options.
 
 - [ ] The automated playlist can be shared to other users.
+
+- [ ] The playlist generated will be reasonably adjusted according to the Apple Watch data.
 
 
 ## Wireframe
