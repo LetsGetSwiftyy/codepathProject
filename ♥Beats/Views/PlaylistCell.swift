@@ -1,18 +1,15 @@
 //
-//  SongCell.swift
+//  PlaylistCell.swift
 //  ♥Beats
 //
-//  Created by Marilyn Florek on 11/7/18.
+//  Created by Marilyn Florek on 10/29/18.
 //  Copyright © 2018 Francisco Hernanedz. All rights reserved.
 //
 
 import UIKit
 
-class SongCell: UITableViewCell {
-    @IBOutlet weak var albumCover: UIImageView!
-    @IBOutlet weak var artistName: UILabel!
-    @IBOutlet weak var songTitle: UILabel!
-    @IBOutlet weak var playBtn: UIButton!
+class PlaylistCell: UITableViewCell {
+    @IBOutlet weak var playlistTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

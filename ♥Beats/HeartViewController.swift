@@ -13,6 +13,14 @@ class HeartViewController: UIViewController {
     var range: NSRange!
     var array: NSArray!
     
+    @IBOutlet weak var playBtn: UIButton!
+    let pause = UIImage(named: "pause")
+    let play = UIImage(named: "play")
+    var buttonClicked = true;
+    @IBOutlet weak var forwardBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var songName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,4 +37,21 @@ class HeartViewController: UIViewController {
         self.heartViewImage.animationDuration = 1.0
         self.heartViewImage.startAnimating()
     }
+    
+    @IBAction func onPlay(_ sender: Any) {
+        if buttonClicked == false {
+            (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
+            buttonClicked = true;
+        } else {
+            (sender as! UIButton).setImage(self.play,for: UIControlState.normal);
+            buttonClicked = false;
+        }
+    }
+    
+    @IBAction func onForwardClick(_ sender: Any) {
+    }
+    
+    @IBAction func onBackClick(_ sender: Any) {
+    }
+    
 }
