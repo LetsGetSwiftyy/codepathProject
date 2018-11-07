@@ -11,45 +11,47 @@ import HealthKit
 //import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SPTSessionManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
     
-    // MARK: - Properties
-    //
-    
+    private var rootViewController = ViewController()
     private let healthStore = HKHealthStore()
-    
+
     var window: UIWindow?
     
     // MARK: - Lifecycle
     
     private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //FirebaseApp.configure()
+        // Authorize access to health data for watch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
         return true
     }
     
-    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
-        // Authorize access to health data for watch.
-        healthStore.handleAuthorizationForExtension { success, error in
-            print(success)
+//    func applicationShouldRequestHealthAuthorization(_ application: UIApplication) {
+//
+//        healthStore.handleAuthorizationForExtension { success, error in
+//            print(success)
+//        }
+//    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        rootViewController.sessionManager.application(app, open: url, options: options)
+        return true
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        if (rootViewController.appRemote.isConnected) {
+            rootViewController.appRemote.disconnect()
         }
     }
     
-    let SpotifyClientID = "Heartbeat Project"
-    let SpotifyRedirectURL = URL(string: "spotify-ios-quick-start://spotify-login-callback")!
-    
-    lazy var configuration = SPTConfiguration(
-        clientID: SpotifyClientID,
-        redirectURL: SpotifyRedirectURL
-    )
-    
-    func sessionManager(manager: SPTSessionManager, didInitiate session: SPTSession) {
-        print("success", session)
-    }
-    func sessionManager(manager: SPTSessionManager, didFailWith error: Error) {
-        print("fail", error)
-    }
-    func sessionManager(manager: SPTSessionManager, didRenew session: SPTSession) {
-        print("renewed", session)
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if let _ = rootViewController.appRemote.connectionParameters.accessToken {
+            rootViewController.appRemote.connect()
+        }
     }
     
 }

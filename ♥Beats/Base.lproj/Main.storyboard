@@ -102,7 +102,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNG-Pn-xFf">
-                                <rect key="frame" x="87" y="321" width="200" height="24"/>
+                                <rect key="frame" x="87.5" y="321" width="200" height="24"/>
                                 <color key="backgroundColor" red="0.0" green="0.91319219559585496" blue="0.30328802141622691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="8Ui-mH-sa7"/>
@@ -152,6 +152,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ocz-iX-O98"/>
                     </view>
+                    <connections>
+                        <outlet property="spotifyButton" destination="bNG-Pn-xFf" id="pzB-xm-pfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uL-dV-yu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

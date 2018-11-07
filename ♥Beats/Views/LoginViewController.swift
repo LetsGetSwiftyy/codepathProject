@@ -9,10 +9,12 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var spotifyButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        spotifyButton = ConnectSpotifyButton(title: "Connect To Spotify")
         // Do any additional setup after loading the view.
     }
     
