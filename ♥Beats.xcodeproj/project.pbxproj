@@ -23,7 +23,7 @@
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
 		A622EB1D2190389A000CB29A /* ConnectSpotifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622EB1C2190389A000CB29A /* ConnectSpotifyButton.swift */; };
 		A67C7C8A218458BC0068E0BC /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */; };
-		AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */; };
+		A6E6788D21B83BCD00F49E07 /* SpotifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6788C21B83BCD00F49E07 /* SpotifyManager.swift */; };
 		AA3F5FFC21803A5200A97B50 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */; };
 		AA3F60022180434700A97B50 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60012180434700A97B50 /* AuthorizationManager.swift */; };
 		AA3F60042180436E00A97B50 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F60032180436E00A97B50 /* HeartRateManager.swift */; };
@@ -146,7 +146,7 @@
 		A622EB1C2190389A000CB29A /* ConnectSpotifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSpotifyButton.swift; sourceTree = "<group>"; };
 		A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		A67C7C8B21845A1E0068E0BC /* Cisco.-Beats-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Cisco.-Beats-Bridging-Header.h"; path = "../Cisco.-Beats-Bridging-Header.h"; sourceTree = "<group>"; };
-		AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A6E6788C21B83BCD00F49E07 /* SpotifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyManager.swift; sourceTree = "<group>"; };
 		AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		AA3F60012180434700A97B50 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		AA3F60032180436E00A97B50 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
@@ -312,6 +312,7 @@
 				A67C7C8B21845A1E0068E0BC /* Cisco.-Beats-Bridging-Header.h */,
 				1C9DA6B72183767A00870DBD /* HeartViewController.swift */,
 				A622EB1C2190389A000CB29A /* ConnectSpotifyButton.swift */,
+				A6E6788C21B83BCD00F49E07 /* SpotifyManager.swift */,
 			);
 			path = "♥Beats";
 			sourceTree = "<group>";
@@ -353,7 +354,6 @@
 				1C59194521801B7D000A25F6 /* HeartInterfaceController.swift */,
 				AA4D29EB217A513E003782B4 /* Supporting Files */,
 				AA6EB23E2171132F0052D83C /* ExtensionDelegate.swift */,
-				AA3F5FE5218024BA00A97B50 /* InterfaceController.swift */,
 			);
 			path = "watchApp Extension";
 			sourceTree = "<group>";
@@ -724,6 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E6788D21B83BCD00F49E07 /* SpotifyManager.swift in Sources */,
 				1C9DA6BD2187E19D00870DBD /* SignUpViewController.swift in Sources */,
 				A622EB1D2190389A000CB29A /* ConnectSpotifyButton.swift in Sources */,
 				AA6EB1FE2171119B0052D83C /* ViewController.swift in Sources */,
@@ -761,7 +762,6 @@
 				1C59194621801B7D000A25F6 /* HeartInterfaceController.swift in Sources */,
 				AA3F600A218043E500A97B50 /* HKUnit+BeatsPerMinute.swift in Sources */,
 				AA3F6008218043C400A97B50 /* HeartRate.swift in Sources */,
-				AA3F5FE6218024BA00A97B50 /* InterfaceController.swift in Sources */,
 				AA3F60062180439400A97B50 /* WorkoutManager.swift in Sources */,
 				AA3F60022180434700A97B50 /* AuthorizationManager.swift in Sources */,
 				AA6EB2412171132F0052D83C /* NotificationController.swift in Sources */,
@@ -944,8 +944,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "♥Beats/♥Beats.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XLNX78VJ5X;
@@ -976,8 +974,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "♥Beats/♥Beats.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XLNX78VJ5X;
