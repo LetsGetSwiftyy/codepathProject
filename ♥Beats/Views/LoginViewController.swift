@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     
     @IBOutlet weak var spotifyButton: UIButton!
     var authViewController: UIViewController!
-    var firstload: Bool!
+    var firstLoad: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,47 +38,69 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     
     func openLoginPage()
     {
-        print("Logging in...")
-        let auth = SPTAuth()
-        self.authViewController = self.authViewControllerWithURL(url: auth.spotifyWebAuthenticationURL() as NSURL)
-        self.definesPresentationContext = true
-        self.present(authViewController, animated: true) {
-            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            print("FINISHED")
+        let auth = SPTAuth.defaultInstance()
+        auth.clientID = "5fee3fd264af4f0b811d1508c0604473"
+        auth.requestedScopes = [SPTAuthStreamingScope]
+        auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
+        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
+        auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
+        
+        print("using spotify app authentication")
+        
+        if SPTAuth.supportsApplicationAuthentication() {
+            UIApplication.shared.canOpenURL(auth.spotifyAppAuthenticationURL())
+        } else {
+            authViewController = authViewController(with: SPTAuth.defaultInstance().spotifyWebAuthenticationURL())
+            definesPresentationContext = true
+            present(authViewController, animated: true) {
+                print("COMPLETED")
+            }
         }
         
-        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-        
+        print(auth.clientID as Any)
+    
     }
     
-    func authViewControllerWithURL(url: NSURL) -> UIViewController
-    {
-        var viewController = UIViewController()
-        let webView = WebViewController(url: url as URL)
-        webView.delegate = self
-        viewController = UINavigationController.init(rootViewController: webView)
-        viewController.modalPresentationStyle = UIModalPresentationStyle.pageSheet
+    func authViewController(with url: URL?) -> UIViewController? {
+        var viewController: UIViewController?
+        if SFSafariViewController.self != nil {
+            var safari: SFSafariViewController? = nil
+            if let anUrl = url {
+                safari = SFSafariViewController(url: anUrl)
+            }
+            safari?.delegate = self
+            viewController = safari
+        } else {
+            var webView: WebViewController? = nil
+            if let anUrl = url {
+                webView = WebViewController(url: anUrl)
+            }
+            webView?.delegate = self
+            if let aView = webView {
+                viewController = UINavigationController(rootViewController: aView)
+            }
+        }
+        viewController?.modalPresentationStyle = .pageSheet
         return viewController
     }
+
 
     func productViewControllerDidFinish(_ viewController: SPTStoreViewController) {
         print("In store controller function")
     }
 
-    func sessionUpdatedNotification(notification: NSNotification )
-    {
-        var auth = SPTAuth.defaultInstance()
-        self.presentedViewController?.dismiss(animated: true, completion:nil)
-//
-//    if (auth.session && [auth.session isValid]) {
-//    self.statusLabel.text = @"";
-//    [self showPlayer];
-//    } else {
-//    self.statusLabel.text = @"Login failed.";
-//    NSLog(@"*** Failed to log in");
-//    }
-//    }
-    
+    func sessionUpdatedNotification(_ notification: Notification?) {
+        let auth = SPTAuth.defaultInstance()
+        presentedViewController?.dismiss(animated: true)
+        
+        
+        if (auth.session != nil) && auth.session!.isValid() {
+            showPlayer()
+        } else {
+            print("*** Failed to log in")
+        }
+    }
+        
     func showPlayer()
     {
         self.firstLoad = false;
@@ -87,18 +109,19 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
 
     func renewTokenAndShowPlayer()
     {
-        var auth = SPTAuth.defaultInstance()
-
-        auth.renewSession(auth.session, callback: (error: NSError, session: SPTSession), {
-            auth.session = session;
-
-        if (error) {
-            NSLog(@"*** Error renewing session: %@", error);
-            return;
-        }
+        let auth = SPTAuth.defaultInstance()
+        
+        auth.renewSession(auth.session!, callback: { error, session in
+            auth.session = session
             
-            showPlayer()
-
-        };
+            if error != nil {
+                if let anError = error {
+                    print("*** Error renewing session: \(anError)")
+                }
+                return
+            }
+            
+            self.showPlayer()
+        })
     }
 }

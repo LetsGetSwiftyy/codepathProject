@@ -59,8 +59,6 @@
     printf("PRESSED DONE");
     if ([self.delegate respondsToSelector:@selector(webViewControllerDidFinish:)]) {
         [self.delegate webViewControllerDidFinish:self];
-        
-    
     }
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -72,9 +70,12 @@
     if (!self.loadComplete) {
         if ([self.delegate respondsToSelector:@selector(webViewController:didCompleteInitialLoad:)]) {
             [self.delegate webViewController:self didCompleteInitialLoad:YES];
+            printf("Loaded not complete for the webivewController");
         }
         self.loadComplete = YES;
     }
+    
+    printf("Loaded the webivewController");
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -84,6 +85,7 @@
             [self.delegate webViewController:self didCompleteInitialLoad:NO];
         }
         self.loadComplete = YES;
+        printf("Error: %s",error.localizedDescription);
     }
 }
 

@@ -27,18 +27,18 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        heartViewImage.image = UIImage(named: "heart-")
-        let imgListArray :NSMutableArray = []
-        for countValue in 0...6
-        {
-            let strImageName : String = "heart-\(countValue).png"
-            let image  = UIImage(named:strImageName)
-            imgListArray .add(image!)
-        }
+//        heartViewImage.image = UIImage(named: "heart-")
+//        let imgListArray :NSMutableArray = []
+//        for countValue in 0...6
+//        {
+//            let strImageName : String = "heart-\(countValue).png"
+//            let image  = UIImage(named:strImageName)
+//            imgListArray .add(image!)
+//        }
         
-        self.heartViewImage.animationImages = imgListArray as? [UIImage];
-        self.heartViewImage.animationDuration = 1.0
-        self.heartViewImage.startAnimating()
+//        self.heartViewImage.animationImages = imgListArray as? [UIImage];
+//        self.heartViewImage.animationDuration = 1.0
+//        self.heartViewImage.startAnimating()
     }
     
     @IBAction func onPlay(_ sender: Any) {

@@ -50,36 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-//        rootViewController.sessionManager.application(app, open: url, options: options)//
-//        if (authCallback != nil) {
-//            (error: NSError, session: SPTSession) in do {
-//                if (error) {
-//                    print("*** Auth error: %@", error);
-//                } else {
-//                    auth.session = session;
-//
-//                }
-//
-//                authCallbackprint("session updated")
-//
-//            }
-//        }
-        
-        /*
-         Handle the callback from the authentication service. -[SPAuth -canHandleURL:]
-         helps us filter out URLs that aren't authentication URLs (i.e., URLs you use elsewhere in your application).
-         */
-        
-        if (auth.canHandle(url)) {
-            auth.handleAuthCallback(withTriggeredAuthURL: url, callback: authCallback)
-            return true;
-        }
-        
-        return false;
-    }
-
     func applicationWillResignActive(_ application: UIApplication) {
 //        if (rootViewController.appRemote.isConnected) {
 //            rootViewController.appRemote.disconnect()
@@ -92,5 +62,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
     }
     
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let auth = SPTAuth.defaultInstance()
+        
+        authCallback = { error, session in
+            // This is the callback that'll be triggered when auth is completed (or fails).
+            
+            if error != nil {
+                if let anError = error {
+                    print("*** Auth error: \(anError)")
+                }
+            } else {
+                auth.session = session
+            }
+            NotificationCenter.default.post(name: NSNotification.Name("sessionUpdated"), object: self)
+        }
+        
+        /*
+         Handle the callback from the authentication service. -[SPAuth -canHandleURL:]
+         helps us filter out URLs that aren't authentication URLs (i.e., URLs you use elsewhere in your application).
+         */
+        
+        if auth.canHandle(url) {
+            auth.handleAuthCallback(withTriggeredAuthURL: url, callback: authCallback)
+            return true
+        }
+        
+        return false
+    }
 }
 
