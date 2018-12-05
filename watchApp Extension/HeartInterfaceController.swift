@@ -59,7 +59,7 @@ class HeartInterfaceController: WKInterfaceController {
 
 // MARK: - Workout Manager Delegate
 
-extension InterfaceController: WorkoutManagerDelegate {
+extension HeartInterfaceController: WorkoutManagerDelegate {
     
     func workoutManager(_ manager: WorkoutManager, didChangeStateTo newState: WorkoutState) {
         // Update title of control button.
