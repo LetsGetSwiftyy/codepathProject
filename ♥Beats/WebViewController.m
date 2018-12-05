@@ -56,8 +56,11 @@
 
 - (void)didPressDone
 {
+    printf("PRESSED DONE");
     if ([self.delegate respondsToSelector:@selector(webViewControllerDidFinish:)]) {
         [self.delegate webViewControllerDidFinish:self];
+        
+    
     }
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }

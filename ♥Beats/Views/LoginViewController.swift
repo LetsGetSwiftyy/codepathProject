@@ -12,6 +12,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     
     @IBOutlet weak var spotifyButton: UIButton!
     var authViewController: UIViewController!
+    var firstload: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +42,10 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         let auth = SPTAuth()
         self.authViewController = self.authViewControllerWithURL(url: auth.spotifyWebAuthenticationURL() as NSURL)
         self.definesPresentationContext = true
-//        self.present(authViewController, animated: true) {
-//            self.performSegue(withIdentifier: "loginSegue", sender: nil)
-//        }
+        self.present(authViewController, animated: true) {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            print("FINISHED")
+        }
         
         self.performSegue(withIdentifier: "loginSegue", sender: nil)
         
@@ -63,4 +65,40 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         print("In store controller function")
     }
 
+    func sessionUpdatedNotification(notification: NSNotification )
+    {
+        var auth = SPTAuth.defaultInstance()
+        self.presentedViewController?.dismiss(animated: true, completion:nil)
+//
+//    if (auth.session && [auth.session isValid]) {
+//    self.statusLabel.text = @"";
+//    [self showPlayer];
+//    } else {
+//    self.statusLabel.text = @"Login failed.";
+//    NSLog(@"*** Failed to log in");
+//    }
+//    }
+    
+    func showPlayer()
+    {
+        self.firstLoad = false;
+        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+    }
+
+    func renewTokenAndShowPlayer()
+    {
+        var auth = SPTAuth.defaultInstance()
+
+        auth.renewSession(auth.session, callback: (error: NSError, session: SPTSession), {
+            auth.session = session;
+
+        if (error) {
+            NSLog(@"*** Error renewing session: %@", error);
+            return;
+        }
+            
+            showPlayer()
+
+        };
+    }
 }
