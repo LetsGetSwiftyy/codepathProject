@@ -151,6 +151,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didChangePlaybackStatus isPlaying: Bool) {
         print("is playing = \(isPlaying)")
         if isPlaying {
+            playBtn.setImage(self.pause,for: UIControlState.normal);
             self.activateAudioSession()
         }
         else {

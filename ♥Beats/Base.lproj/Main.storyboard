@@ -81,7 +81,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="mhE-qM-5rp" eventType="touchUpInside" id="pWL-BG-g5p"/>
-                                    <segue destination="O5J-Bv-wr9" kind="show" identifier="loginSegue" id="2fE-X3-GCi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign-In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlN-rq-pRc">
@@ -178,6 +177,7 @@
                     </view>
                     <connections>
                         <outlet property="spotifyButton" destination="bNG-Pn-xFf" id="pzB-xm-pfn"/>
+                        <segue destination="Y0A-vu-fjn" kind="show" identifier="loginSegue" id="FyT-L6-rQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uL-dV-yu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,10 +193,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPz-G9-0mD">
-                                <rect key="frame" x="16" y="49" width="343" height="337"/>
+                                <rect key="frame" x="16" y="49" width="343" height="386"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-dS-KfZ">
-                                <rect key="frame" x="150" y="459" width="75" height="37"/>
+                                <rect key="frame" x="150" y="508" width="75" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Zfy-sO-cma"/>
                                 </constraints>
@@ -205,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-Dm-HQP">
-                                <rect key="frame" x="168.5" y="408" width="38" height="39"/>
+                                <rect key="frame" x="168.5" y="457" width="38" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="d1y-yO-qvP"/>
                                 </constraints>
@@ -215,7 +215,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo3-hq-qxZ">
-                                <rect key="frame" x="300" y="408" width="38" height="39"/>
+                                <rect key="frame" x="300" y="457" width="38" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="Ebn-fj-ymh"/>
                                     <constraint firstAttribute="width" constant="38" id="wGS-2Y-Otq"/>
@@ -226,7 +226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-97-kBK">
-                                <rect key="frame" x="37" y="408" width="38" height="39"/>
+                                <rect key="frame" x="37" y="457" width="38" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="YLc-NP-IZx"/>
                                     <constraint firstAttribute="height" constant="39" id="b2K-Uh-VFK"/>
@@ -237,10 +237,10 @@
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2CU-r9-lMc">
-                                <rect key="frame" x="37" y="538" width="301" height="2"/>
+                                <rect key="frame" x="37" y="587" width="301" height="2"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-TN-G3t">
-                                <rect key="frame" x="150" y="498" width="75" height="22"/>
+                                <rect key="frame" x="150" y="547" width="75" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="ivV-gd-s6p"/>
                                 </constraints>
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oP-a5-RwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2512.8000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1692" y="130"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8R4-A7-ojq">
@@ -362,7 +362,6 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="onRegister:" destination="cnJ-vY-IU2" eventType="touchUpInside" id="hSy-nb-Tcp"/>
-                                    <segue destination="O5J-Bv-wr9" kind="show" identifier="registeredSegue" id="q2V-ld-IWC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -399,26 +398,6 @@
             </objects>
             <point key="canvasLocation" x="903" y="896"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="wUr-Ak-c1O">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O5J-Bv-wr9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="xBQ-m9-Ciq">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Y0A-vu-fjn" kind="relationship" relationship="viewControllers" id="ddK-Ky-Xrw"/>
-                        <segue destination="dZH-qa-k8f" kind="relationship" relationship="viewControllers" id="7Y7-xn-QYT"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yiI-Gi-Ysk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1692" y="134"/>
-        </scene>
         <!--Playlists-->
         <scene sceneID="CxE-m9-bpn">
             <objects>
@@ -428,7 +407,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f29-RY-A1A">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="61" id="WhC-Nm-spN" customClass="PlaylistCell" customModule="_Beats" customModuleProvider="target">
@@ -672,7 +651,4 @@
         <image name="forward" width="208" height="186"/>
         <image name="play" width="134.5" height="181"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="2fE-X3-GCi"/>
-    </inferredMetricsTieBreakers>
 </document>
