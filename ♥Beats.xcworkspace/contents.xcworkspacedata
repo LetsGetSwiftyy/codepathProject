@@ -8,7 +8,7 @@
       location = "group:SpotifyiOS.framework">
    </FileRef>
    <FileRef
-      location = "group:&#x2665;Beats.xcodeproj">
+      location = "container:&#x2665;Beats.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
