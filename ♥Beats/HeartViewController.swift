@@ -14,6 +14,7 @@ import AVFoundation
 
 class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     @IBOutlet weak var heartViewImage: UIImageView!
+    
     var range: NSRange!
     var array: NSArray!
     let auth = SPTAuth.defaultInstance()
@@ -34,9 +35,6 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
 
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
-//        SPTAudioStreamingController.sharedInstance() = SPTAudioStreamingController.sharedInstance()
-//        SPTAudioStreamingController.sharedInstance().playbackDelegate = self
-//        SPTAudioStreamingController.sharedInstance().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,7 +58,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                 let imageURL = track.album.largestCover.imageURL
                 if imageURL == nil {
                     print("Album \(track.album) doesn't have any images!")
-//                    self.coverView.image = nil
+                    self.heartViewImage.image = nil
                     return
                 }
                 DispatchQueue.global().async {
@@ -76,6 +74,11 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                                 return
                             }
                         }
+                        
+//                        let blurred = self.applyBlur(on: image!, withRadius: 10.0)
+//                        DispatchQueue.main.async {
+//                            self.backgroundImg.image = blurred
+//                        }
                         
                     } catch let error {
                         print(error.localizedDescription)
@@ -106,10 +109,9 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     @IBAction func onPlay(_ sender: Any) {
         print("PLAY CLICKED")
-//        SPTAudioStreamingController.sharedInstance().login(withAccessToken: (auth.session?.accessToken)!)
         SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
 
-        if buttonClicked == false {
+        if SPTAudioStreamingController.sharedInstance().playbackState.isPlaying {
             (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
             buttonClicked = true;
         } else {
@@ -195,7 +197,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController) {
         self.updateUI()
         print("Audio Streaming Did Login")
-        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:2yLXxKhhziG2xzy7eyD4TD", startingWith: 0, startingWithPosition: 10) { error in
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:37i9dQZF1DWSJHnPb1f0X3", startingWith: 0, startingWithPosition: 10) { error in
             if error != nil {
                 print("*** failed to play: \(error)")
                 return
@@ -220,5 +222,17 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         catch let error {
             print("Audio Session deactivate error: \(error.localizedDescription)")
         }
+    }
+    
+    func applyBlur(on imageToBlur: UIImage, withRadius blurRadius: CGFloat) -> UIImage {
+        let originalImage = CIImage(cgImage: imageToBlur.cgImage!)
+        let filter = CIFilter(name: "CIGaussianBlur")
+        filter?.setValue(originalImage, forKey: "inputImage")
+        filter?.setValue(blurRadius, forKey: "inputRadius")
+        let outputImage = filter?.outputImage
+        let context = CIContext(options: nil)
+        let outImage = context.createCGImage(outputImage!, from: outputImage!.extent)
+        let ret = UIImage(cgImage: outImage!)
+        return ret
     }
 }
