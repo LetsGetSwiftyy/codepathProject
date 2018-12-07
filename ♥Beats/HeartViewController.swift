@@ -9,15 +9,21 @@
 import UIKit
 import AudioToolbox
 import AVFoundation
+import WatchConnectivity
 
 //var SPTAudioStreamingController.sharedInstance(): SPTAudioStreamingController!
 
-class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
+class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate, WCSessionDelegate {
     @IBOutlet weak var heartViewImage: UIImageView!
     
     var range: NSRange!
     var array: NSArray!
     let auth = SPTAuth.defaultInstance()
+    
+    var session: WCSession?
+    var HeartBPM: String?
+    var dict: [String: Any] = ["Default":"Default"]
+    
     
     @IBOutlet weak var playBtn: UIButton!
     let pause = UIImage(named: "pause")
@@ -32,7 +38,13 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if WCSession.isSupported() {
+            session = WCSession.default
+            session?.delegate = self
+            session?.activate()
+        }
+        
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
     }
@@ -41,7 +53,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         super.viewDidAppear(animated)
         handleNewSession()
     }
-
+    
     func updateUI() {
         if SPTAudioStreamingController.sharedInstance().metadata == nil || SPTAudioStreamingController.sharedInstance().metadata.currentTrack == nil {
             self.heartViewImage.image = nil
@@ -67,7 +79,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                         let image = UIImage(data: imageData)
                         // …and back to the main queue to display the image.
                         DispatchQueue.main.async {
-//                            self.spinner.stopAnimating()
+                            //                            self.spinner.stopAnimating()
                             self.heartViewImage.image = image
                             if image == nil {
                                 print("Couldn't load cover image with error: \(error as Any)")
@@ -75,10 +87,10 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                             }
                         }
                         
-//                        let blurred = self.applyBlur(on: image!, withRadius: 10.0)
-//                        DispatchQueue.main.async {
-//                            self.backgroundImg.image = blurred
-//                        }
+                        //                        let blurred = self.applyBlur(on: image!, withRadius: 10.0)
+                        //                        DispatchQueue.main.async {
+                        //                            self.backgroundImg.image = blurred
+                        //                        }
                         
                     } catch let error {
                         print(error.localizedDescription)
@@ -105,12 +117,12 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
             self.closeSession()
         }
     }
-
+    
     
     @IBAction func onPlay(_ sender: Any) {
         print("PLAY CLICKED")
         SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
-
+        
         if SPTAudioStreamingController.sharedInstance().playbackState.isPlaying {
             (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
             buttonClicked = true;
@@ -134,7 +146,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         do {
             try SPTAudioStreamingController.sharedInstance().stop()
             auth.session = nil
-//            _ = self.navigationController!.popViewController(animated: true)
+            //            _ = self.navigationController!.popViewController(animated: true)
         } catch let error {
             let alert = UIAlertController(title: "Error deinit", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -179,7 +191,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didChangePosition position: TimeInterval) {
         let positionDouble = Double(position)
         let durationDouble = Double(SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.duration)
-//        self.progressSlider.value = Float(positionDouble / durationDouble)
+        //        self.progressSlider.value = Float(positionDouble / durationDouble)
     }
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didStartPlayingTrack trackUri: String) {
@@ -236,4 +248,32 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         let ret = UIImage(cgImage: outImage!)
         return ret
     }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        print ("message received")
+        print (message)
+        //retrieve info
+        let type = message["Type"] as! String
+        let content = message["Content"]
+        
+        
+        switch type {
+            
+        case "HeartBeat":
+            print("Received")
+            //self.viewDidLoad()
+            var dict = [String: Any]()
+            dict = message
+        default:
+            print("Received message \(message) is invalid with type of \(type)")
+        }
+        
+        
+    }
+    
+    
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    func sessionDidBecomeInactive(_ session: WCSession) { }
+    func sessionDidDeactivate(_ session: WCSession) { }
 }
