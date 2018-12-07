@@ -233,17 +233,18 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     }
     
     func slowPlaylist() {
-        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:37i9dQZF1DX4WYpdgoIcn6", startingWith: 0, startingWithPosition: 10) { error in
+        // LoFi
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:74sUjcvpGfdOvCHvgzNEDO", startingWith: 0, startingWithPosition: 10) { error in
             if error != nil {
                 print("*** failed to play: \(error)")
                 return
             }
         }
+        
     }
     
     func restingPlaylist() {
-        // LoFi
-        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:74sUjcvpGfdOvCHvgzNEDO", startingWith: 0, startingWithPosition: 10) { error in
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:37i9dQZF1DX4WYpdgoIcn6", startingWith: 0, startingWithPosition: 10) { error in
             if error != nil {
                 print("*** failed to play: \(error)")
                 return
