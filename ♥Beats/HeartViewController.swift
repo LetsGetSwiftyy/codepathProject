@@ -21,7 +21,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     let auth = SPTAuth.defaultInstance()
     
     var session: WCSession?
-    var HeartBPM: String?
+    var HeartBPM: String!
     var dict: [String: Any] = ["Default":"Default"]
     
     
@@ -47,6 +47,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
+        self.HeartBPM = "120"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -210,6 +211,36 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController) {
         self.updateUI()
         print("Audio Streaming Did Login")
+        
+        if Int(HeartBPM)! < 80 {
+            slowPlaylist()
+        } else if Int(HeartBPM)! > 80 && Int(HeartBPM)! < 100 {
+            restingPlaylist()
+        } else {
+            fastPlaylist()
+        }
+    }
+    
+    func slowPlaylist() {
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:37i9dQZF1DX4WYpdgoIcn6", startingWith: 0, startingWithPosition: 10) { error in
+            if error != nil {
+                print("*** failed to play: \(error)")
+                return
+            }
+        }
+    }
+    
+    func restingPlaylist() {
+        // LoFi
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:74sUjcvpGfdOvCHvgzNEDO", startingWith: 0, startingWithPosition: 10) { error in
+            if error != nil {
+                print("*** failed to play: \(error)")
+                return
+            }
+        }
+    }
+    
+    func fastPlaylist() {
         SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:37i9dQZF1DWSJHnPb1f0X3", startingWith: 0, startingWithPosition: 10) { error in
             if error != nil {
                 print("*** failed to play: \(error)")
