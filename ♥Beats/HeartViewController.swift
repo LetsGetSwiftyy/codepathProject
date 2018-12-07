@@ -16,7 +16,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     @IBOutlet weak var heartViewImage: UIImageView!
     var range: NSRange!
     var array: NSArray!
-//    let auth = SPTAuth.defaultInstance()
+    let auth = SPTAuth.defaultInstance()
     
     @IBOutlet weak var playBtn: UIButton!
     let pause = UIImage(named: "pause")
@@ -31,28 +31,13 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        heartViewImage.image = UIImage(named: "heart-")
-//        let imgListArray :NSMutableArray = []
-//        for countValue in 0...6
-//        {
-//            let strImageName : String = "heart-\(countValue).png"
-//            let image  = UIImage(named:strImageName)
-//            imgListArray .add(image!)
-//        }
-        
-//        self.heartViewImage.animationImages = imgListArray as? [UIImage];
-//        self.heartViewImage.animationDuration = 1.0
-//        self.heartViewImage.startAnimating()
+
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
-        print("AUTH CLIENT: \(String(describing: auth.clientID))")
+        print("AUTH CLIENT: \(auth.clientID)")
         player = SPTAudioStreamingController.sharedInstance()
         player!.playbackDelegate = self
         player!.delegate = self
-//
-//        try! player?.start(withClientId: auth.clientID!)
-        player!.login(withAccessToken: (auth.session?.accessToken)!)
     }
     
     override func viewDidAppear(_ animated: Bool) {

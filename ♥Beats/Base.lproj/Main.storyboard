@@ -192,9 +192,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tpc-ao-mj3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPz-G9-0mD">
                                 <rect key="frame" x="16" y="49" width="343" height="337"/>
                                 <constraints>
@@ -265,12 +262,9 @@
                             <constraint firstItem="lo3-hq-qxZ" firstAttribute="leading" secondItem="KPz-G9-0mD" secondAttribute="trailing" constant="-59" id="9G9-XM-EoQ"/>
                             <constraint firstItem="d6d-TN-G3t" firstAttribute="top" secondItem="Jsa-dS-KfZ" secondAttribute="bottom" constant="2" id="9N5-jK-4Se"/>
                             <constraint firstItem="d6d-TN-G3t" firstAttribute="trailing" secondItem="Jsa-dS-KfZ" secondAttribute="trailing" id="FlE-6e-3w4"/>
-                            <constraint firstItem="Tpc-ao-mj3" firstAttribute="top" secondItem="Kd4-69-KQM" secondAttribute="top" id="ILv-vt-Kpj"/>
                             <constraint firstItem="KPz-G9-0mD" firstAttribute="top" secondItem="pBZ-za-30v" secondAttribute="top" constant="29" id="LTG-fn-It9"/>
                             <constraint firstItem="Jsa-dS-KfZ" firstAttribute="leading" secondItem="pBZ-za-30v" secondAttribute="leading" constant="16" id="OZ2-Vu-9Hk"/>
                             <constraint firstItem="d6d-TN-G3t" firstAttribute="leading" secondItem="Jsa-dS-KfZ" secondAttribute="leading" id="RpA-8G-wCV"/>
-                            <constraint firstItem="Tpc-ao-mj3" firstAttribute="leading" secondItem="pBZ-za-30v" secondAttribute="leading" id="ZAS-5l-rtu"/>
-                            <constraint firstItem="Tpc-ao-mj3" firstAttribute="trailing" secondItem="pBZ-za-30v" secondAttribute="trailing" id="acJ-sC-HaI"/>
                             <constraint firstItem="lo3-hq-qxZ" firstAttribute="trailing" secondItem="2CU-r9-lMc" secondAttribute="trailing" id="ain-4L-cNC"/>
                             <constraint firstItem="Pkb-Dm-HQP" firstAttribute="leading" secondItem="PVm-97-kBK" secondAttribute="trailing" constant="100" id="c5t-Wn-D5E"/>
                             <constraint firstItem="PVm-97-kBK" firstAttribute="top" secondItem="pBZ-za-30v" secondAttribute="top" constant="388" id="cI6-FE-Ef3"/>
@@ -284,7 +278,6 @@
                             <constraint firstItem="pBZ-za-30v" firstAttribute="trailing" secondItem="lo3-hq-qxZ" secondAttribute="trailing" constant="37" id="s7o-oQ-Tat"/>
                             <constraint firstItem="Pkb-Dm-HQP" firstAttribute="top" secondItem="lo3-hq-qxZ" secondAttribute="top" constant="1" id="tdi-Cp-XYP"/>
                             <constraint firstItem="KPz-G9-0mD" firstAttribute="leading" secondItem="pBZ-za-30v" secondAttribute="leading" constant="16" id="trN-qz-0Jh"/>
-                            <constraint firstAttribute="bottom" secondItem="Tpc-ao-mj3" secondAttribute="bottom" id="vBQ-hp-GGl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pBZ-za-30v"/>
                     </view>

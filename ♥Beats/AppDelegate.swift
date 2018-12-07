@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //    private var rootViewController = ViewController()
     private let healthStore = HKHealthStore()
     var authCallback: SPTAuthCallback!
-    var auth: SPTAuth!
     
     var window: UIWindow?
     
