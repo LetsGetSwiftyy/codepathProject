@@ -42,6 +42,7 @@
 		8BBCBF7221B8515500B74459 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBCBF7121B8515400B74459 /* Security.framework */; };
 		8BBCBF7421B8516600B74459 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBCBF7321B8516600B74459 /* CoreData.framework */; };
 		8BBCBF7621B8516C00B74459 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBCBF7521B8516C00B74459 /* CoreGraphics.framework */; };
+		8BBCBF7821BA665400B74459 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBCBF7721BA665400B74459 /* SystemConfiguration.framework */; };
 		A1B5E7CEDA1BFDB601D46AB2 /* Pods__Beats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E860DB4245375DA657A1162 /* Pods__Beats.framework */; };
 		A622EB1D2190389A000CB29A /* ConnectSpotifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622EB1C2190389A000CB29A /* ConnectSpotifyButton.swift */; };
 		AA3F5FFC21803A5200A97B50 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3F5FFB21803A5200A97B50 /* HealthKitManager.swift */; };
@@ -183,6 +184,7 @@
 		8BBCBF7121B8515400B74459 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8BBCBF7321B8516600B74459 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8BBCBF7521B8516C00B74459 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BBCBF7721BA665400B74459 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9F16B7235574A20E7B5F0D7F /* Pods-♥BeatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-♥BeatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-♥BeatsTests/Pods-♥BeatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A622EB1C2190389A000CB29A /* ConnectSpotifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSpotifyButton.swift; sourceTree = "<group>"; };
 		A67C7C89218458BC0068E0BC /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBCBF7821BA665400B74459 /* SystemConfiguration.framework in Frameworks */,
 				8BBCBF7221B8515500B74459 /* Security.framework in Frameworks */,
 				8BBCBF7621B8516C00B74459 /* CoreGraphics.framework in Frameworks */,
 				8BBCBF7421B8516600B74459 /* CoreData.framework in Frameworks */,
@@ -421,6 +424,7 @@
 		AA6EB254217138FA0052D83C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BBCBF7721BA665400B74459 /* SystemConfiguration.framework */,
 				8BBCBF7521B8516C00B74459 /* CoreGraphics.framework */,
 				8BBCBF7321B8516600B74459 /* CoreData.framework */,
 				8BBCBF7121B8515400B74459 /* Security.framework */,

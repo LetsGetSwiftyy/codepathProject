@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         
         auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
-        auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
+        auth.redirectURL = URL(string: kCallbackURL)
         //        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
         

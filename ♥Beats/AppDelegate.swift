@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
-        auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
+        auth.redirectURL = URL(string: kCallbackURL)
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
         
         return true

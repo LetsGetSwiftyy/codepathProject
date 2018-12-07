@@ -44,3 +44,5 @@
 
 #endif
 
+
+// Launch Screen bg photo courtesy of Brad Cook on Flickr: https://www.flickr.com/photos/bradeatscheese/16032088701/in/photolist-qqGDqr-57LjYh-j6ZGLr-Mgr7w-oBymLh-8nhTkM-4bmajA-Wu7tpJ-dMJJQy-dWzzFm-7QWS1U-7dvcux-WddQdr-kzTqxi-kCm4jc-4tB1x1-3FRF9T-7oFxR1-frntFk-eG5JHC-9TijWs-8njqyW-5GgDsr-4ahg75-8o53Ew-akAxN9-qK6Y4u-bQt16g-bMK2Y4-5hvwRe-de4kka-rguHjB-72zhLZ-8KnHc1-5RCvgr-zejvN-8SXBo1-85m1XK-fqrmC3-oB8gc7-fqGgpo-6rcEFR-r18oEF-77SpLB-mo5N8K-7duGvX-813kP3-ak6htA-m2wHr4-k25kNf/
