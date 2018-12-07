@@ -21,7 +21,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     let auth = SPTAuth.defaultInstance()
     
     var session: WCSession?
-    var HeartBPM: String!
+    var HeartBPM: Int!
     var dict: [String: Any] = ["Default":"Default"]
     
     
@@ -47,7 +47,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
-        self.HeartBPM = "120"
+        self.HeartBPM = 81
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -223,9 +223,9 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     }
     
     func newPlaylistRequested() {
-        if Int(HeartBPM)! < 80 {
+        if HeartBPM < 80 {
             slowPlaylist()
-        } else if Int(HeartBPM)! > 80 && Int(HeartBPM)! < 100 {
+        } else if HeartBPM > 80 && HeartBPM < 100 {
             restingPlaylist()
         } else {
             fastPlaylist()
@@ -304,14 +304,26 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         case "HeartBeat":
             print("Received")
             //self.viewDidLoad()
-            var dict = [String: Any]()
             dict = message
+            getBPM()
+            newPlaylistRequested()
         default:
             print("Received message \(message) is invalid with type of \(type)")
         }
         
-        newPlaylistRequested()
+        
     }
+    
+    func getBPM(){
+        
+        let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
+        
+        let jsonString = try!  JSONSerialization.jsonObject(with: jsonData, options: [])as! [String: Any]
+        HeartBPM = Int((jsonString["Content"] as! NSString).intValue)
+        //HeartBPM = HeartBPM + 41
+        print("BPM is", HeartBPM)
+    }
+    
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
     func sessionDidBecomeInactive(_ session: WCSession) { }
