@@ -170,6 +170,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
             self.activateAudioSession()
         }
         else {
+            playBtn.setImage(self.play,for: UIControlState.normal);
             self.deactivateAudioSession()
         }
     }
