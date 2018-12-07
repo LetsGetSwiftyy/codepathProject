@@ -41,7 +41,10 @@ The playlist can then be shared with others, or saved to the user.
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/LetsGetSwiftyy/heartBeats/blob/Francisco/HeartBeats%20Demo.gif'' alt='Video Walkthrough' />
+<!--<img src='https://github.com/LetsGetSwiftyy/heartBeats/blob/Francisco/HeartBeats%20Demo.gif'' alt='Video Walkthrough' />-->
+
+<img src='https://raw.githubusercontent.com/LetsGetSwiftyy/heartBeats/master/demo.gif'' alt='Video Walkthrough' />
+<img src='https://raw.githubusercontent.com/LetsGetSwiftyy/heartBeats/master/watch.gif'' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
