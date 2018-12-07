@@ -10,7 +10,7 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
-var player: SPTAudioStreamingController!
+//var SPTAudioStreamingController.sharedInstance(): SPTAudioStreamingController!
 
 class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     @IBOutlet weak var heartViewImage: UIImageView!
@@ -34,10 +34,9 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
 
         self.songName.text = "Nothing Playing"
         self.artistName.text = "No Artist"
-        print("AUTH CLIENT: \(auth.clientID)")
-        player = SPTAudioStreamingController.sharedInstance()
-        player!.playbackDelegate = self
-        player!.delegate = self
+//        SPTAudioStreamingController.sharedInstance() = SPTAudioStreamingController.sharedInstance()
+//        SPTAudioStreamingController.sharedInstance().playbackDelegate = self
+//        SPTAudioStreamingController.sharedInstance().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,16 +45,16 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     }
 
     func updateUI() {
-        if player.metadata == nil || player.metadata.currentTrack == nil {
+        if SPTAudioStreamingController.sharedInstance().metadata == nil || SPTAudioStreamingController.sharedInstance().metadata.currentTrack == nil {
             self.heartViewImage.image = nil
             return
         }
-        self.forwardBtn.isEnabled = player.metadata.nextTrack != nil
-        self.backBtn.isEnabled = player.metadata.prevTrack != nil
-        self.songName.text = player.metadata.currentTrack?.name
-        self.artistName.text = player.metadata.currentTrack?.artistName
+        self.forwardBtn.isEnabled = SPTAudioStreamingController.sharedInstance().metadata.nextTrack != nil
+        self.backBtn.isEnabled = SPTAudioStreamingController.sharedInstance().metadata.prevTrack != nil
+        self.songName.text = SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.name
+        self.artistName.text = SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.artistName
         
-        SPTTrack.track(withURI: URL(string: player.metadata.currentTrack!.uri)!, accessToken: auth.session!.accessToken, market: nil) { error, result in
+        SPTTrack.track(withURI: URL(string: SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.uri)!, accessToken: auth.session!.accessToken, market: nil) { error, result in
             
             if let track = result as? SPTTrack {
                 let imageURL = track.album.largestCover.imageURL
@@ -91,11 +90,11 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         print("New session")
         do {
             print("Inside the handle new session do")
-            try player.start(withClientId: auth.clientID!, audioController: nil, allowCaching: true)
-            player.delegate = self
-            player.playbackDelegate = self
-            player.diskCache = SPTDiskCache() /* capacity: 1024 * 1024 * 64 */
-            player.login(withAccessToken: "token")
+            try SPTAudioStreamingController.sharedInstance().start(withClientId: auth.clientID!, audioController: nil, allowCaching: true)
+            SPTAudioStreamingController.sharedInstance().delegate = self
+            SPTAudioStreamingController.sharedInstance().playbackDelegate = self
+            SPTAudioStreamingController.sharedInstance().diskCache = SPTDiskCache() /* caapacity: 1024 * 1024 * 64 */
+            SPTAudioStreamingController.sharedInstance().login(withAccessToken: (auth.session?.accessToken)!)
         } catch let error {
             let alert = UIAlertController(title: "Error init", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -107,7 +106,8 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     @IBAction func onPlay(_ sender: Any) {
         print("PLAY CLICKED")
-        player.setIsPlaying(!player.playbackState.isPlaying, callback: nil)
+        SPTAudioStreamingController.sharedInstance().login(withAccessToken: (auth.session?.accessToken)!)
+        SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
 
         if buttonClicked == false {
             (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
@@ -119,18 +119,18 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     }
     
     @IBAction func onForwardClick(_ sender: Any) {
-        player.skipNext { (error: Error?) in
+        SPTAudioStreamingController.sharedInstance().skipNext { (error: Error?) in
         }
     }
     
     @IBAction func onBackClick(_ sender: Any) {
-        player.skipPrevious{ (error: Error?) in
+        SPTAudioStreamingController.sharedInstance().skipPrevious{ (error: Error?) in
         }
     }
     
     func closeSession() {
         do {
-            try player.stop()
+            try SPTAudioStreamingController.sharedInstance().stop()
             auth.session = nil
 //            _ = self.navigationController!.popViewController(animated: true)
         } catch let error {
@@ -162,7 +162,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didReceive event: SpPlaybackEvent, withName name: String) {
         print("didReceivePlaybackEvent: \(event) \(name)")
-        print("isPlaying=\(player.playbackState.isPlaying) isRepeating=\(player.playbackState.isRepeating) isShuffling=\(player.playbackState.isShuffling) isActiveDevice=\(player.playbackState.isActiveDevice) positionMs=\(player.playbackState.position)")
+        print("isPlaying=\(SPTAudioStreamingController.sharedInstance().playbackState.isPlaying) isRepeating=\(SPTAudioStreamingController.sharedInstance().playbackState.isRepeating) isShuffling=\(SPTAudioStreamingController.sharedInstance().playbackState.isShuffling) isActiveDevice=\(SPTAudioStreamingController.sharedInstance().playbackState.isActiveDevice) positionMs=\(SPTAudioStreamingController.sharedInstance().playbackState.position)")
     }
     
     func audioStreamingDidLogout(_ audioStreaming: SPTAudioStreamingController) {
@@ -175,16 +175,16 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didChangePosition position: TimeInterval) {
         let positionDouble = Double(position)
-        let durationDouble = Double(player.metadata.currentTrack!.duration)
+        let durationDouble = Double(SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.duration)
 //        self.progressSlider.value = Float(positionDouble / durationDouble)
     }
     
     func audioStreaming(_ audioStreaming: SPTAudioStreamingController, didStartPlayingTrack trackUri: String) {
         print("Starting \(trackUri)")
-        print("Source \(player.metadata.currentTrack?.playbackSourceUri)")
+        print("Source \(SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.playbackSourceUri)")
         // If context is a single track and the uri of the actual track being played is different
         // than we can assume that relink has happended.
-        let isRelinked = player.metadata.currentTrack!.playbackSourceUri.contains("spotify:track") && !(player.metadata.currentTrack!.playbackSourceUri == trackUri)
+        let isRelinked = SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.playbackSourceUri.contains("spotify:track") && !(SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.playbackSourceUri == trackUri)
         print("Relinked \(isRelinked)")
     }
     
@@ -195,7 +195,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController) {
         self.updateUI()
         print("Audio Streaming Did Login")
-        player.playSpotifyURI("spotify:user:spotify:playlist:2yLXxKhhziG2xzy7eyD4TD", startingWith: 0, startingWithPosition: 10) { error in
+        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:user:spotify:playlist:2yLXxKhhziG2xzy7eyD4TD", startingWith: 0, startingWithPosition: 10) { error in
             if error != nil {
                 print("*** failed to play: \(error)")
                 return
