@@ -10,13 +10,13 @@ import UIKit
 import AudioToolbox
 import AVFoundation
 
-var player: SPTAudioStreamingController!
+let player = SPTAudioStreamingController.sharedInstance()
 
 class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate {
     @IBOutlet weak var heartViewImage: UIImageView!
     var range: NSRange!
     var array: NSArray!
-    let auth = SPTAuth.defaultInstance()
+//    let auth = SPTAuth.defaultInstance()
     
     @IBOutlet weak var playBtn: UIButton!
     let pause = UIImage(named: "pause")
@@ -45,28 +45,25 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
 //        self.heartViewImage.animationDuration = 1.0
 //        self.heartViewImage.startAnimating()
         self.songName.text = "Nothing Playing"
-        self.artistName.text = ""
+        self.artistName.text = "No Artist"
+        print("AUTH CLIENT: \(auth.clientID)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         handleNewSession()
+        print("session: \(auth.session!.accessToken)")
     }
-    
+
     func updateUI() {
-        let auth = SPTAuth.defaultInstance()
         if SPTAudioStreamingController.sharedInstance().metadata == nil || SPTAudioStreamingController.sharedInstance().metadata.currentTrack == nil {
             self.heartViewImage.image = nil
-//            self.coverView2.image = nil
             return
         }
-//        self.spinner.startAnimating()
         self.forwardBtn.isEnabled = SPTAudioStreamingController.sharedInstance().metadata.nextTrack != nil
         self.backBtn.isEnabled = SPTAudioStreamingController.sharedInstance().metadata.prevTrack != nil
         self.songName.text = SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.name
         self.artistName.text = SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.artistName
-//        self.playbackSourceTitle.text = SPTAudioStreamingController.sharedInstance().metadata.currentTrack?.playbackSourceName
-        
         
         SPTTrack.track(withURI: URL(string: SPTAudioStreamingController.sharedInstance().metadata.currentTrack!.uri)!, accessToken: auth.session!.accessToken, market: nil) { error, result in
             
@@ -75,11 +72,8 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                 if imageURL == nil {
                     print("Album \(track.album) doesn't have any images!")
 //                    self.coverView.image = nil
-//                    self.coverView2.image = nil
                     return
                 }
-                // Pop over to a background queue to load the image over the network.
-                
                 DispatchQueue.global().async {
                     do {
                         let imageData = try Data(contentsOf: imageURL, options: [])
@@ -93,11 +87,6 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
                                 return
                             }
                         }
-                        // Also generate a blurry version for the background
-//                        let blurred = self.applyBlur(on: image!, withRadius: 10.0)
-//                        DispatchQueue.main.async {
-//                            self.heartViewImage.image = blurred
-//                        }
                         
                     } catch let error {
                         print(error.localizedDescription)
@@ -126,6 +115,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
 
     
     @IBAction func onPlay(_ sender: Any) {
+        print("PLAY CLICKED")
         SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
 
         if buttonClicked == false {
@@ -150,7 +140,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     func closeSession() {
         do {
             try SPTAudioStreamingController.sharedInstance().stop()
-            SPTAuth.defaultInstance().session = nil
+            auth.session = nil
             _ = self.navigationController!.popViewController(animated: true)
         } catch let error {
             let alert = UIAlertController(title: "Error deinit", message: error.localizedDescription, preferredStyle: .alert)

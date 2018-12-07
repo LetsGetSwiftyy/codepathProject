@@ -186,25 +186,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-Dm-HQP">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-Dm-HQP">
                                 <rect key="frame" x="175" y="409" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="3iM-Rj-IaJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="PaT-m4-dg6"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="SPb-gi-5Su"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="38" id="cS8-PM-aaS"/>
                                     <constraint firstAttribute="height" constant="38" id="fgq-WN-DWJ"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="38" id="vlo-dk-t0V"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
                                 <connections>
                                     <action selector="onPlay:" destination="Y0A-vu-fjn" eventType="touchUpInside" id="O3Y-um-Ffc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo3-hq-qxZ">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lo3-hq-qxZ">
                                 <rect key="frame" x="300" y="408" width="38" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="DCQ-Iq-R3I"/>
                                     <constraint firstAttribute="width" constant="38" id="Jvb-L3-sM7"/>
                                     <constraint firstAttribute="height" constant="39" id="ZrX-el-8e3"/>
                                 </constraints>
@@ -213,7 +208,7 @@
                                     <action selector="onForwardClick:" destination="Y0A-vu-fjn" eventType="touchUpInside" id="wm6-ka-cGg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-97-kBK">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-97-kBK">
                                 <rect key="frame" x="37" y="408" width="38" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="GmL-gZ-mes"/>

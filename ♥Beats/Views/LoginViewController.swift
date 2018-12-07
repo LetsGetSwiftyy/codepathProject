@@ -7,12 +7,13 @@
 //
 
 import UIKit
+let auth = SPTAuth.defaultInstance()
 
 class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafariViewControllerDelegate, SPTStoreControllerDelegate {
     
     @IBOutlet weak var spotifyButton: UIButton!
     var authViewController: UIViewController!
-    let auth = SPTAuth.defaultInstance()
+//    let auth = SPTAuth.defaultInstance()
     var authCallback: SPTAuthCallback!
     var firstLoad: Bool!
     
@@ -22,7 +23,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
-//        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
+        //        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
         
         print("Login view loaded!" )
@@ -73,11 +74,11 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = URL(string: kCallbackURL)
-//        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
+        //        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
-
+        
         print("using spotify app authentication")
-
+        
         if SPTAuth.supportsApplicationAuthentication() {
             UIApplication.shared.openURL(auth.spotifyWebAuthenticationURL())
         } else {
@@ -87,7 +88,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
                 print("COMPLETED")
             }
         }
-
+        
         print(auth.clientID as Any)
     }
     
@@ -97,12 +98,12 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         
         return UINavigationController(rootViewController: webView)
     }
-
-
+    
+    
     func productViewControllerDidFinish(_ viewController: SPTStoreViewController) {
         print("In store controller function")
     }
-
+    
     @objc func sessionUpdatedNotification(notification: NSNotification) {
         presentedViewController?.dismiss(animated: true)
         
@@ -113,17 +114,17 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
             print("*** Failed to log in")
         }
     }
-        
+    
     func showPlayer()
     {
         self.firstLoad = false;
         self.performSegue(withIdentifier: "loginSegue", sender: nil)
     }
-
+    
     func renewTokenAndShowPlayer()
     {
         auth.renewSession(auth.session!, callback: { error, session in
-            self.auth.session = session
+            auth.session = session
             
             if error != nil {
                 if let anError = error {
