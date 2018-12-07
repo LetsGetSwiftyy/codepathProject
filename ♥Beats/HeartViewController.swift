@@ -106,7 +106,7 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     
     @IBAction func onPlay(_ sender: Any) {
         print("PLAY CLICKED")
-        SPTAudioStreamingController.sharedInstance().login(withAccessToken: (auth.session?.accessToken)!)
+//        SPTAudioStreamingController.sharedInstance().login(withAccessToken: (auth.session?.accessToken)!)
         SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
 
         if buttonClicked == false {
