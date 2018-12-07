@@ -123,6 +123,8 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     @IBAction func onPlay(_ sender: Any) {
         print("PLAY CLICKED")
         SPTAudioStreamingController.sharedInstance().setIsPlaying(!SPTAudioStreamingController.sharedInstance().playbackState.isPlaying, callback: nil)
+        SPTAudioStreamingController.sharedInstance().setShuffle(!SPTAudioStreamingController.sharedInstance().playbackState.isShuffling) { (error: Error?) in
+        }
         
         if SPTAudioStreamingController.sharedInstance().playbackState.isPlaying {
             (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
@@ -212,6 +214,14 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
         self.updateUI()
         print("Audio Streaming Did Login")
         
+        SPTAudioStreamingController.sharedInstance().setShuffle(!SPTAudioStreamingController.sharedInstance().playbackState.isShuffling) { (error: Error?) in
+        }
+
+        newPlaylistRequested()
+        
+    }
+    
+    func newPlaylistRequested() {
         if Int(HeartBPM)! < 80 {
             slowPlaylist()
         } else if Int(HeartBPM)! > 80 && Int(HeartBPM)! < 100 {
@@ -299,10 +309,8 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
             print("Received message \(message) is invalid with type of \(type)")
         }
         
-        
+        newPlaylistRequested()
     }
-    
-    
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
     func sessionDidBecomeInactive(_ session: WCSession) { }
