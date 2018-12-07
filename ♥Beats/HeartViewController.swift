@@ -42,29 +42,29 @@ class HeartViewController: UIViewController, SPTAudioStreamingDelegate, SPTAudio
     }
     
     @IBAction func onPlay(_ sender: Any) {
-        player.setIsPlaying(!player.playbackState.isPlaying) { (error: Error?) in
-            print(error as Any)
-        }
-        
-        if buttonClicked == false {
-            (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
-            buttonClicked = true;
-        } else {
-            (sender as! UIButton).setImage(self.play,for: UIControlState.normal);
-            buttonClicked = false;
-        }
+//        player.setIsPlaying(!player.playbackState.isPlaying) { (error: Error?) in
+//            print(error as Any)
+//        }
+//
+//        if buttonClicked == false {
+//            (sender as! UIButton).setImage(self.pause,for: UIControlState.normal);
+//            buttonClicked = true;
+//        } else {
+//            (sender as! UIButton).setImage(self.play,for: UIControlState.normal);
+//            buttonClicked = false;
+//        }
     }
     
     @IBAction func onForwardClick(_ sender: Any) {
-        player.skipNext { (error: Error?) in
-            print(error as Any)
-        }
+//        player.skipNext { (error: Error?) in
+//            print(error as Any)
+//        }
     }
     
     @IBAction func onBackClick(_ sender: Any) {
-        player.skipPrevious{ (error: Error?) in
-            print(error as Any)
-        }
+//        player.skipPrevious{ (error: Error?) in
+//            print(error as Any)
+//        }
     }
     
 }

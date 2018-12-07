@@ -22,7 +22,7 @@
 // Don't forget to add your callback URL's prefix to the URL Types section in the target's Info pane!
 
 // Your client ID
-#define kClientId "5fee3fd264af4f0b811d1508c0604473"
+#define kClientId "e6695c6d22214e0f832006889566df9c"
 
 // Your applications callback URL
 #define kCallbackURL "spotifyiossdkexample://"
@@ -30,14 +30,15 @@
 // The URL to your token swap endpoint
 // If you don't provide a token swap service url the login will use implicit grant tokens, which means that your user will need to sign in again every time the token expires.
 
-// #define kTokenSwapServiceURL "http://localhost:1234/swap"
+// #define kTokenSwapServiceURL "https://test-spotify-token-swap.herokuapp.com/token"
 
 // The URL to your token refresh endpoint
 // If you don't provide a token refresh service url, the user will need to sign in again every time their token expires.
 
-// #define kTokenRefreshServiceURL "http://localhost:1234/refresh"
+// #define kTokenRefreshServiceURL "https://test-spotify-token-swap.herokuapp.com/api/refresh_token"
 
 
 #define kSessionUserDefaultsKey "SpotifySession"
 
 #endif
+

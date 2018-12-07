@@ -59,6 +59,7 @@
     printf("PRESSED DONE");
     if ([self.delegate respondsToSelector:@selector(webViewControllerDidFinish:)]) {
         [self.delegate webViewControllerDidFinish:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"sessionUpdated" object:self];
     }
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -76,6 +77,7 @@
     }
     
     printf("Loaded the webivewController");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"sessionUpdated" object:self];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

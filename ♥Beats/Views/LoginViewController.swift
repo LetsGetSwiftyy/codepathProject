@@ -12,13 +12,20 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     
     @IBOutlet weak var spotifyButton: UIButton!
     var authViewController: UIViewController!
+    let auth = SPTAuth.defaultInstance()
     var firstLoad: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Login view loaded!" )
+        auth.clientID = kClientId
+        auth.requestedScopes = [SPTAuthStreamingScope]
+        auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
+//        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
+        auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
         
+        print("Login view loaded!" )
+        NotificationCenter.default.addObserver(self, selector: #selector(sessionUpdatedNotification(notification:)), name: NSNotification.Name(rawValue: "sessionUpdated"), object: nil)
         
         // Do any additional setup after loading the view.
     }
@@ -33,44 +40,43 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     
     @IBAction func onSpotifyLogin(_ sender: Any) {
         print("Clicked!")
-        openLoginPage();
+        openLoginPage()
+        print("READY")
     }
     
     func openLoginPage()
     {
-        let auth = SPTAuth.defaultInstance()
-        auth.clientID = "5fee3fd264af4f0b811d1508c0604473"
+        auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
-        auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
-        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
+        auth.redirectURL = URL(string: kCallbackURL)
+//        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
-        
+
         print("using spotify app authentication")
-        
+
         if SPTAuth.supportsApplicationAuthentication() {
-            UIApplication.shared.canOpenURL(auth.spotifyAppAuthenticationURL())
+            UIApplication.shared.open(auth.spotifyWebAuthenticationURL())
         } else {
-            authViewController = authViewController(with: SPTAuth.defaultInstance().spotifyWebAuthenticationURL())
+            authViewController = authViewController(with: auth.spotifyWebAuthenticationURL())
             definesPresentationContext = true
             present(authViewController, animated: true) {
                 print("COMPLETED")
             }
         }
-        
+
         print(auth.clientID as Any)
-    
     }
     
     func authViewController(with url: URL?) -> UIViewController? {
         var viewController: UIViewController?
-        if SFSafariViewController.self != nil {
-            var safari: SFSafariViewController? = nil
-            if let anUrl = url {
-                safari = SFSafariViewController(url: anUrl)
-            }
-            safari?.delegate = self
-            viewController = safari
-        } else {
+//        if SFSafariViewController.self != nil {
+//            var safari: SFSafariViewController? = nil
+//            if let anUrl = url {
+//                safari = SFSafariViewController(url: anUrl)
+//            }
+//            safari?.delegate = self
+//            viewController = safari
+//        } else {
             var webView: WebViewController? = nil
             if let anUrl = url {
                 webView = WebViewController(url: anUrl)
@@ -79,7 +85,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
             if let aView = webView {
                 viewController = UINavigationController(rootViewController: aView)
             }
-        }
+//        }
         viewController?.modalPresentationStyle = .pageSheet
         return viewController
     }
@@ -89,8 +95,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         print("In store controller function")
     }
 
-    func sessionUpdatedNotification(_ notification: Notification?) {
-        let auth = SPTAuth.defaultInstance()
+    @objc func sessionUpdatedNotification(notification: NSNotification) {
         presentedViewController?.dismiss(animated: true)
         
         
@@ -109,10 +114,8 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
 
     func renewTokenAndShowPlayer()
     {
-        let auth = SPTAuth.defaultInstance()
-        
         auth.renewSession(auth.session!, callback: { error, session in
-            auth.session = session
+            self.auth.session = session
             
             if error != nil {
                 if let anError = error {

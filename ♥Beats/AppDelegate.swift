@@ -30,10 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window?.makeKeyAndVisible()
 //        applicationShouldRequestHealthAuthorization(application)
         
-        auth.clientID = "5fee3fd264af4f0b811d1508c0604473"
+        auth.clientID = kClientId
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = URL(fileURLWithPath: kCallbackURL)
-        auth.tokenSwapURL = URL(fileURLWithPath: "https://test-spotify-token-swap.herokuapp.com/token")
         auth.sessionUserDefaultsKey = kSessionUserDefaultsKey;
         
         return true
