@@ -17,6 +17,11 @@ class HeartInterfaceController: WKInterfaceController {
     
     private let workoutManager = WorkoutManager()
     
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+    
+        heartBeating()
+    }
     
     func heartBeating() {
         heartImageView.setBackgroundImageNamed("heart-")
@@ -27,8 +32,7 @@ class HeartInterfaceController: WKInterfaceController {
         super.willActivate()
         
         // Configure workout manager.
-        workoutManager.delegate = self
-        heartBeating()
+        workoutManager.delegate = self as? WorkoutManagerDelegate
     }
 
     override func didDeactivate() {
