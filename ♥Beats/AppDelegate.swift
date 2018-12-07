@@ -62,31 +62,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        let auth = SPTAuth.defaultInstance()
-        
-        authCallback = { error, session in
-            // This is the callback that'll be triggered when auth is completed (or fails).
-            
-            if error != nil {
-                if let anError = error {
-                    print("*** Auth error: \(anError)")
+        // Ask SPTAuth if the URL given is a Spotify authentication callback
+        print("The URL: \(url)")
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "sessionUpdated"), object: self)
+
+        if SPTAuth.defaultInstance().canHandle(url) {
+            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url) { error, session in
+                // This is the callback that'll be triggered when auth is completed (or fails).
+                if error != nil {
+                    print("*** Auth error: \(error)")
+                    return
                 }
-            } else {
-                auth.session = session
+                else {
+                    SPTAuth.defaultInstance().session = session
+                }
+                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "sessionUpdated"), object: self)
             }
-            NotificationCenter.default.post(name: NSNotification.Name("sessionUpdated"), object: self)
         }
-        
-        /*
-         Handle the callback from the authentication service. -[SPAuth -canHandleURL:]
-         helps us filter out URLs that aren't authentication URLs (i.e., URLs you use elsewhere in your application).
-         */
-        
-        if auth.canHandle(url) {
-            auth.handleAuthCallback(withTriggeredAuthURL: url, callback: authCallback)
-            return true
-        }
-        
         return false
     }
 }

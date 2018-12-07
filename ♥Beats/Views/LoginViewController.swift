@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
     @IBOutlet weak var spotifyButton: UIButton!
     var authViewController: UIViewController!
     let auth = SPTAuth.defaultInstance()
+    var authCallback: SPTAuthCallback!
     var firstLoad: Bool!
     
     override func viewDidLoad() {
@@ -28,6 +29,29 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         NotificationCenter.default.addObserver(self, selector: #selector(sessionUpdatedNotification(notification:)), name: NSNotification.Name(rawValue: "sessionUpdated"), object: nil)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let auth = SPTAuth.defaultInstance()
+        // Uncomment to turn off native/SSO/flip-flop login flow
+        //auth.allowNativeLogin = NO;
+        // Check if we have a token at all
+        if auth.session == nil {
+            return
+        }
+        // Check if it's still valid
+        if (auth.session?.isValid())!{
+            // It's still valid, show the player.
+            self.showPlayer()
+            return
+        }
+        // Oh noes, the token has expired, if we have a token refresh service set up, we'll call tat one.
+        if auth.hasTokenRefreshService {
+            self.renewTokenAndShowPlayer()
+            return
+        }
+        // Else, just show login dialog
     }
     
     @IBAction func onLogin(_ sender: Any) {
@@ -55,9 +79,9 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         print("using spotify app authentication")
 
         if SPTAuth.supportsApplicationAuthentication() {
-            UIApplication.shared.open(auth.spotifyWebAuthenticationURL())
+            UIApplication.shared.openURL(auth.spotifyWebAuthenticationURL())
         } else {
-            authViewController = authViewController(with: auth.spotifyWebAuthenticationURL())
+            authViewController = self.getAuthViewController(withURL: auth.spotifyWebAuthenticationURL())
             definesPresentationContext = true
             present(authViewController, animated: true) {
                 print("COMPLETED")
@@ -67,27 +91,11 @@ class LoginViewController: UIViewController, WebViewControllerDelegate, SFSafari
         print(auth.clientID as Any)
     }
     
-    func authViewController(with url: URL?) -> UIViewController? {
-        var viewController: UIViewController?
-//        if SFSafariViewController.self != nil {
-//            var safari: SFSafariViewController? = nil
-//            if let anUrl = url {
-//                safari = SFSafariViewController(url: anUrl)
-//            }
-//            safari?.delegate = self
-//            viewController = safari
-//        } else {
-            var webView: WebViewController? = nil
-            if let anUrl = url {
-                webView = WebViewController(url: anUrl)
-            }
-            webView?.delegate = self
-            if let aView = webView {
-                viewController = UINavigationController(rootViewController: aView)
-            }
-//        }
-        viewController?.modalPresentationStyle = .pageSheet
-        return viewController
+    func getAuthViewController(withURL url: URL) -> UIViewController {
+        let webView = WebViewController(url: url)
+        webView.delegate = self
+        
+        return UINavigationController(rootViewController: webView)
     }
 
 
